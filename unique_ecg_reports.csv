@@ -1,0 +1,738 @@
+report_0,count
+Sinus rhythm,7321
+Sinus rhythm.,6016
+Sinus tachycardia.,1982
+Sinus tachycardia,1779
+Sinus bradycardia,975
+Atrial fibrillation,953
+Atrial fibrillation.,836
+Sinus bradycardia.,804
+*** CONSIDER ACUTE ST ELEVATION MI ***,795
+Atrial fibrillation with rapid ventricular response.,687
+--- Warning: Data quality may affect interpretation ---,624
+Atrial fibrillation with rapid ventricular response,582
+Sinus rhythm with 1st degree A-V block,371
+Sinus rhythm with 1st degree A-V block.,358
+Sinus rhythm with borderline 1st degree A-V block,334
+Sinus rhythm with borderline 1st degree A-V block.,331
+SINUS RHYTHM,304
+Sinus rhythm with PAC(s).,274
+Sinus rhythm with PAC(s),272
+Sinus arrhythmia.,271
+Sinus arrhythmia,267
+Ventricular pacing.,198
+Ventricular pacing,195
+Atrial fibrillation with slow ventricular response,188
+Sinus rhythm with PVC(s),182
+Atrial fibrillation with slow ventricular response.,166
+Sinus rhythm with PVC(s).,164
+Possible ectopic atrial rhythm.,136
+Probable sinus tachycardia.,135
+Probable accelerated junctional rhythm,131
+Possible ectopic atrial rhythm,130
+Sinus bradycardia with 1st degree A-V block,128
+Probable accelerated junctional rhythm.,128
+Sinus rhythm with PACs.,126
+Sinus bradycardia with 1st degree A-V block.,126
+Sinus tachycardia with PAC(s).,125
+Possible atrial flutter with rapid ventricular response.,123
+Regular supraventricular rhythm.,119
+Demand pacing.,115
+Regular supraventricular rhythm,112
+Atrial pacing.,110
+Accelerated idioventricular rhythm.,109
+Accelerated idioventricular rhythm,104
+Sinus rhythm with PVCs.,97
+Sinus rhythm with PACs,94
+Sinus bradycardia with sinus arrhythmia.,94
+Possible atrial flutter,90
+Sinus tachycardia with PAC(s),87
+Pacer detection suspended due to external noise-REVIEW ADVISED,86
+Possible atrial flutter.,83
+Sinus tachycardia with PACs.,82
+Sinus bradycardia with sinus arrhythmia,77
+Sinus tachycardia with sinus arrhythmia.,76
+Demand pacing,73
+Sinus bradycardia with borderline 1st degree A-V block,73
+Atrial flutter with rapid ventricular response with 2:1 A-V block.,72
+Undetermined rhythm,72
+Undetermined rhythm.,71
+Probable sinus tachycardia,69
+A-V sequential pacemaker,66
+Atrial pacing,64
+Sinus bradycardia with borderline 1st degree A-V block.,63
+SINUS BRADYCARDIA,61
+Atrial fibrillation with uncontrolled ventricular response.,58
+Atrial fibrillation with PVC(s),58
+Sinus tachycardia with borderline 1st degree A-V block.,57
+Possible atrial flutter with rapid ventricular response,54
+Probable atrial tachycardia.,54
+Atrial fibrillation with PVC(s) or aberrant ventricular conduction.,53
+Sinus rhythm with PVCs,52
+Atrial fibrillation with rapid ventricular response with PVC(s).,48
+Sinus tachycardia with borderline 1st degree A-V block,46
+Sinus bradycardia with PAC(s),45
+Atrial fibrillation with PVC(s).,45
+Sinus tachycardia with sinus arrhythmia,45
+Sinus bradycardia with PAC(s).,44
+Atrial fibrillation with PVC(s) or aberrant ventricular conduction,43
+"Age not entered, assumed to be  50 years old for purpose of ECG interpretation",42
+Sinus tachycardia with PACs,40
+Sinus tachycardia with PVC(s).,39
+Possible idioventricular rhythm with slow ventricular response.,38
+SINUS TACHYCARDIA,38
+Sinus tachycardia with PVC(s),38
+Sinus tachycardia with PVCs.,37
+A-V dissociation.,37
+Atrial flutter with rapid ventricular response with 2:1 A-V block,37
+Sinus rhythm with PVC(s) with PAC(s),37
+Sinus rhythm with frequent PVCs.,37
+Probable atrial tachycardia,36
+Atrial fibrillation with PVCs.,36
+Possible ectopic atrial bradycardia,36
+Probable supraventricular tachycardia.,36
+Sinus rhythm with PVC(s) with PAC(s).,36
+A-V sequential pacemaker.,35
+Possible ectopic atrial bradycardia.,34
+Atrial flutter with rapid ventricular response.,33
+--- Pediatric criteria used ---,31
+Atrial fibrillation with PVCs or aberrant ventricular conduction.,31
+A-V dissociation,31
+ATRIAL FIBRILLATION,31
+Demand atrial pacing.,30
+Atrial fibrillation with rapid ventricular response with PVCs.,30
+Sinus bradycardia with PACs.,29
+Demand atrial pacing,29
+Marked sinus bradycardia.,29
+Probable junctional rhythm,29
+Atrial fibrillation with rapid ventricular response with PVC(s),29
+Probable junctional rhythm.,28
+Atrial fibrillation with rapid ventricular response with PVC(s) or aberrant ventricular conduction.,28
+Atrial fibrillation with rapid ventricular response with PVC(s) or aberrant ventricular conduction,28
+Atrial flutter,28
+Marked sinus bradycardia,26
+Probable supraventricular tachycardia,25
+Sinus rhythm with frequent PVCs,25
+Atrial flutter.,25
+Possible accelerated junctional rhythm,25
+Sinus tachycardia with PVCs with PACs.,25
+Sinus tachycardia with frequent PVCs.,24
+Ventricular-paced rhythm,24
+Atrial fibrillation with PVCs,24
+Sinus rhythm with PAC(s) with 1st degree A-V block.,24
+Sinus rhythm with PVC(s) with 1st degree A-V block,24
+Atrial fibrillation with rapid ventricular response with PVCs or aberrant ventricular conduction.,23
+Sinus rhythm with bigeminal PVCs.,23
+Sinus rhythm with bigeminal PACs,23
+Sinus rhythm with PVC(s) with 1st degree A-V block.,23
+Sinus or ectopic atrial rhythm,23
+Sinus arrhythmia with PVC(s).,23
+Sinus arrhythmia with PVC(s),23
+Sinus rhythm with aberrantly conducted supraventricular complexes.,22
+Atrial fibrillation with uncontrolled ventricular response,22
+Possible idioventricular rhythm with slow ventricular response,21
+Junctional rhythm,21
+Possible accelerated junctional rhythm.,20
+Sinus tachycardia with PVCs,20
+Sinus tachycardia with PVC(s) with PAC(s).,20
+Sinus arrhythmia with 1st degree A-V block,19
+Possible ectopic atrial tachycardia.,19
+Sinus arrhythmia with borderline 1st degree A-V block.,19
+Ectopic atrial rhythm,18
+Sinus arrhythmia with borderline 1st degree A-V block,18
+Sinus rhythm with bigeminal PACs.,18
+ATRIAL FIBRILLATION WITH RAPID VENTRICULAR RESPONSE,18
+Sinus tachycardia with aberrantly conducted supraventricular complexes.,17
+Atrial fibrillation with slow ventricular response with PVC(s).,17
+Sinus bradycardia with PVC(s),17
+Sinus rhythm with frequent multifocal PVCs.,17
+Atrial fibrillation with rapid ventricular response with PVCs or aberrant ventricular conduction,17
+Atrial fibrillation with slow ventricular response with PVC(s),16
+Sinus rhythm with PVC(s) with borderline 1st degree A-V block,16
+Atrial flutter with rapid ventricular response,16
+Accelerated junctional rhythm,16
+Sinus rhythm with PVCs with PACs.,16
+Probable atrial fibrillation with PVC(s) or aberrant ventricular conduction.,16
+Atrial fibrillation with PVCs or aberrant ventricular conduction,16
+Sinus rhythm with PVC(s) with borderline 1st degree A-V block.,16
+Warning: Data quality may affect computer interpretation!!,15
+Atrial flutter with 3:1 A-V block,15
+Sinus rhythm with multifocal PVCs.,15
+Atrial flutter with 4:1 A-V block,15
+Sinus rhythm with PVCs with 1st degree A-V block.,15
+Sinus arrhythmia with PVCs.,15
+Sinus rhythm with bigeminal PVCs,14
+Probable atrial fibrillation with rapid ventricular response.,14
+Probable atrial fibrillation,14
+Sinus rhythm with PAC(s) with borderline 1st degree A-V block.,14
+Possible ectopic atrial tachycardia,14
+Sinus tachycardia with sinus arrhythmia with PVC(s).,14
+Sinus rhythm with PAC(s) with borderline 1st degree A-V block,14
+Atrial fibrillation with multifocal PVCs or aberrant ventricular conduction.,14
+Sinus arrhythmia with 1st degree A-V block.,14
+Sinus rhythm with frequent PACs.,14
+Sinus rhythm with PVCs with borderline 1st degree A-V block.,13
+Sinus tachycardia with frequent PVCs,13
+Sinus tachycardia with PVC(s) with PAC(s),13
+Sinus rhythm with PVCs with PACs,13
+Atrial fibrillation with rapid ventricular response with multifocal PVCs or aberrant ventricular conduction,13
+Atrial flutter with 3:1 A-V block.,13
+Sinus rhythm with PAC(s) with 1st degree A-V block,13
+Irregular ectopic atrial rhythm,13
+Sinus rhythm with multifocal PVCs,13
+Sinus rhythm with aberrantly conducted supraventricular complexes,12
+Atrial fibrillation with rapid ventricular response with non-sustained ventricular tachycardia.,12
+Possible atrial flutter with uncontrolled ventricular response.,12
+Atrial fibrillation with frequent multifocal PVCs or aberrant ventricular conduction,12
+Probable atrial fibrillation.,12
+Possible junctional rhythm.,11
+Probable atrial fibrillation with PVC(s) or aberrant ventricular conduction,11
+Atrial-sensed ventricular-paced complexes,11
+Atrial fibrillation with rapid ventricular response with PVCs,11
+Atrial flutter with rapid ventricular response with 3:1 A-V block.,11
+Atrial flutter with uncontrolled ventricular response with 2:1 A-V block.,11
+Sinus bradycardia with PACs,11
+Possible ectopic atrial rhythm with PAC(s).,11
+Sinus tachycardia with frequent multifocal PVCs.,11
+Atrial fibrillation with rapid ventricular response with multifocal PVCs or aberrant ventricular conduction.,11
+Atrial fibrillation with paroxysmal idioventricular rhythm or aberrant ventricular conduction.,11
+Sinus bradycardia with PVCs.,10
+Atrial fibrillation with frequent PVCs or aberrant ventricular conduction.,10
+Atrial-sensed ventricular-paced rhythm,10
+Sinus tachycardia with PVCs with PACs,10
+Ventricular-paced complexes,10
+Irregular sinus tachycardia,9
+Sinus rhythm with frequent multifocal PVCs,9
+Atrial flutter with rapid ventricular response with 3:1 A-V block,9
+Atrial fibrillation with slow ventricular response with PVC(s) or aberrant ventricular conduction.,9
+Possible ectopic atrial rhythm with PVC(s),9
+Possible ectopic atrial rhythm with PAC(s),9
+SINUS ARRHYTHMIA,9
+Sinus rhythm with interpolated PVC(s),9
+Possible atrial flutter with slow ventricular response,9
+Probable atrial fibrillation with PVCs.,9
+Wide QRS tachycardia.,9
+Probable atrial fibrillation with rapid ventricular response,9
+Atrial-ventricular dual-paced rhythm,8
+Sinus bradycardia with sinus arrhythmia with 1st degree A-V block,8
+Sinus bradycardia with sinus arrhythmia with borderline 1st degree A-V block,8
+Sinus rhythm with bigeminal PACs with 1st degree A-V block.,8
+Probable atrial fibrillation with PVC(s).,8
+Atrial fibrillation with frequent multifocal PVCs or aberrant ventricular conduction.,8
+Probable ventricular tachycardia.,8
+Sinus rhythm with PACs with 1st degree A-V block.,8
+Sinus bradycardia with PVC(s).,8
+Sinus rhythm with PACs with borderline 1st degree A-V block,8
+Atrial fibrillation with paroxysmal idioventricular rhythm or aberrant ventricular conduction,8
+Wide QRS tachycardia,8
+Sinus bradycardia with sinus arrhythmia with 1st degree A-V block.,8
+Atrial fibrillation with rapid ventricular response with frequent multifocal PVCs or aberrant ventricular conduction.,8
+REGULAR VENTRICULAR PACING,7
+Atrial fibrillation with frequent PVCs or aberrant ventricular conduction,7
+Probable atrial fibrillation with PVC(s),7
+Atrial flutter with 4:1 A-V block.,7
+Sinus bradycardia with interpolated PVC(s).,7
+Probable atrial fibrillation with rapid ventricular response with PVC(s) or aberrant ventricular conduction.,7
+POSSIBLE ECTOPIC ATRIAL RHYTHM,7
+Sinus tachycardia with frequent PACs.,7
+Atrial flutter with uncontrolled ventricular response with 2:1 A-V block,7
+Atrial fibrillation with rapid ventricular response with paroxysmal idioventricular rhythm or aberrant ventricular conduction.,7
+Possible atrial flutter with rapid ventricular response with PVC(s) or aberrant ventricular conduction.,7
+Sinus bradycardia with sinus arrhythmia with borderline 1st degree A-V block.,7
+Sinus rhythm with interpolated PVC(s).,7
+Sinus tachycardia with sinus arrhythmia with PVC(s),6
+Possible atrial flutter with PVCs or aberrant ventricular conduction.,6
+Atrial fibrillation with slow ventricular response with PVC(s) or aberrant ventricular conduction,6
+Regular rhythm,6
+IRREGULAR SINUS BRADYCARDIA,6
+Atrial fibrillation with multifocal PVCs.,6
+Ectopic atrial bradycardia,6
+Atrial-paced rhythm,6
+Junctional tachycardia,6
+Irregular ectopic atrial rhythm.,6
+Possible atrial flutter with PVC(s) or aberrant ventricular conduction,6
+Sinus tachycardia with 1st degree A-V block,6
+Sinus bradycardia with PAC(s) with 1st degree A-V block,6
+Sinus rhythm with frequent PVCs with borderline 1st degree A-V block,6
+Atrial flutter with rapid ventricular response with PVC(s) or aberrant ventricular conduction.,6
+Possible atrial flutter with slow ventricular response.,6
+Atrial fibrillation with multifocal PVCs or aberrant ventricular conduction,6
+Dual chamber pacemaker.,6
+Sinus rhythm with PACs with borderline 1st degree A-V block.,6
+Atrial fibrillation with intermittent conduction defect.,6
+Probable atrial fibrillation with frequent PVCs or aberrant ventricular conduction,5
+Atrial fibrillation with slow ventricular response with PVCs.,5
+Probable atrial fibrillation with rapid ventricular response with PVC(s),5
+Sinus rhythm with frequent PVCs with 1st degree A-V block.,5
+Sinus arrhythmia with PVCs,5
+Possible atrial flutter with PVC(s).,5
+Atrial-ventricular dual-paced complexes,5
+Atrial fibrillation with rapid ventricular response with non-sustained ventricular tachycardia,5
+Sinus or ectopic atrial bradycardia,5
+Atrial fibrillation with rapid ventricular response with frequent PVCs or aberrant ventricular conduction.,5
+Irregular ectopic atrial tachycardia.,5
+Sinus bradycardia with sinus arrhythmia with PVC(s),5
+Sinus rhythm with multifocal PVCs with 1st degree A-V block.,5
+Possible ectopic atrial rhythm with PVC(s).,5
+Irregular ectopic atrial bradycardia,5
+Possible junctional rhythm,5
+"Sinus rhythm with 2nd degree A-V block, Mobitz I (Wenckebach)",5
+Possible atrial flutter with uncontrolled ventricular response,5
+Sinus rhythm with PVCs with borderline 1st degree A-V block,5
+Possible atrial flutter with PVC(s) or aberrant ventricular conduction.,5
+Possible atrial flutter with rapid ventricular response with PVCs or aberrant ventricular conduction.,5
+Atrial fibrillation with uncontrolled ventricular response with PVC(s).,5
+Probable sinus (? atrial) tachycardia,5
+Probable atrial fibrillation with rapid ventricular response with PVC(s).,5
+PROBABLE ACCELERATED JUNCTIONAL RHYTHM,5
+REGULAR ATRIAL PACING,5
+Incomplete analysis due to missing data in precordial lead(s),5
+Sinus rhythm with bigeminal PVCs with 1st degree A-V block.,5
+Sinus rhythm with PACs with 1st degree A-V block,5
+Possible atrial flutter with rapid ventricular response with PVC(s) or aberrant ventricular conduction,4
+Sinus arrhythmia with interpolated PVCs.,4
+REGULAR SUPRAVENTRICULAR RHYTHM,4
+Atrial fibrillation with slow ventricular response with PVCs,4
+Regular ventricular pacing,4
+Sinus tachycardia with PAC(s) with borderline 1st degree A-V block.,4
+Probable atrial fibrillation with PVCs or aberrant ventricular conduction,4
+Probable atrial fibrillation with frequent multifocal PVCs or aberrant ventricular conduction,4
+Probable atrial fibrillation with rapid ventricular response with frequent multifocal PVCs or aberrant ventricular conduction.,4
+Sinus bradycardia with PAC(s) with 1st degree A-V block.,4
+A-V dissociation with unclassified aberrant complexes.,4
+Sinus tachycardia with multifocal PVCs.,4
+Atrial fibrillation with rapid ventricular response with paroxysmal idioventricular rhythm or aberrant ventricular conduction,4
+Sinus tachycardia with multifocal PVCs with PACs.,4
+Sinus bradycardia with PVC(s) with 1st degree A-V block.,4
+Sinus rhythm with bigeminal PVCs with borderline 1st degree A-V block.,4
+Possible ectopic atrial tachycardia with PAC(s),4
+Sinus rhythm with intermittent conduction defect,4
+Ectopic atrial tachycardia,4
+Probable ventricular tachycardia,4
+"Unknown rhythm, irregular rate",4
+Sinus arrhythmia with PVC(s) with borderline 1st degree A-V block.,4
+Sinus rhythm with interpolated PVCs with 1st degree A-V block.,4
+Atrial fibrillation with paroxysmal idioventricular rhythm,4
+Sinus rhythm with frequent PVCs with 1st degree A-V block,4
+Sinus arrhythmia with aberrantly conducted supraventricular complexes.,4
+Sinus tachycardia with frequent PACs,4
+POSSIBLE ATRIAL FLUTTER WITH RAPID VENTRICULAR RESPONSE,4
+Pacemaker spikes or artifacts,4
+Sinus tachycardia with sinus arrhythmia with multifocal PVCs.,4
+Possible ectopic atrial rhythm with interpolated PVC(s).,4
+Atrial fibrillation with rapid ventricular response with frequent PVCs or aberrant ventricular conduction,4
+Sinus bradycardia with sinus arrhythmia with PVC(s).,4
+Probable atrial fibrillation with multifocal PVCs or aberrant ventricular conduction.,4
+Sinus rhythm with bigeminal PACs with 1st degree A-V block,4
+Afib/flut and V-paced complexes,4
+Atrial flutter with uncontrolled ventricular response.,4
+Sinus tachycardia with aberrantly conducted supraventricular complexes,4
+Possible A-V junctional bradycardia,4
+Atrial flutter with PVCs or aberrant ventricular conduction.,4
+Probable A-V junctional rhythm,4
+Sinus bradycardia with PAC(s) with borderline 1st degree A-V block.,4
+Atrial fibrillation with rapid V-rate,4
+Sinus rhythm with multifocal PVCs with PAC(s),3
+Sinus bradycardia with PVC(s) with borderline 1st degree A-V block,3
+Sinus bradycardia with interpolated PVC(s),3
+POSSIBLE ACCELERATED JUNCTIONAL RHYTHM,3
+Atrial fibrillation with rapid ventricular response with frequent multifocal PVCs or aberrant ventricular conduction,3
+Atrial fibrillation with frequent multifocal PVCs,3
+Atrial fibrillation with fusion complexes or aberrant ventricular conduction,3
+Atrial fibrillation with slow ventricular response with PVCs or aberrant ventricular conduction,3
+Sinus bradycardia with PVC(s) with 1st degree A-V block,3
+Sinus rhythm with interpolated PVCs.,3
+Probable atrial fibrillation with complete A-V block.,3
+Sinus tachycardia with 1st degree A-V block.,3
+Sinus bradycardia with PACs with borderline 1st degree A-V block,3
+DEMAND PACING,3
+ATRIAL FLUTTER WITH RAPID VENTRICULAR RESPONSE,3
+Sinus tachycardia with aberrantly conducted supraventricular complexes with PVC(s).,3
+Atrial fibrillation with slow ventricular response with multifocal PVCs or aberrant ventricular conduction.,3
+Probable atrial fibrillation with rapid ventricular response with PVCs or aberrant ventricular conduction.,3
+Probable atrial fibrillation with rapid ventricular response with PVCs.,3
+Sinus tachycardia with PVCs with borderline 1st degree A-V block.,3
+Sinus rhythm with interpolated PVCs,3
+Sinus rhythm with multifocal PVCs with PAC(s).,3
+Possible ectopic atrial rhythm with PVC(s) with PAC(s).,3
+Sinus tachycardia with sinus arrhythmia with PVCs,3
+Atrial flutter with rapid ventricular response with PVCs or aberrant ventricular conduction.,3
+Atrial fibrillation with rapid ventricular response with multifocal PVCs.,3
+Sinus or ectopic atrial tachycardia,3
+Sinus tachycardia with frequent multifocal PVCs,3
+A-V sequential and ventricular pacing,3
+Atrial fibrillation with slow ventricular response with paroxysmal idioventricular rhythm or aberrant ventricular conduction,3
+Sinus tachycardia with frequent multifocal PVCs with PAC(s).,3
+Atrial fibrillation with frequent PVCs,3
+Sinus rhythm with frequent PACs,3
+Atrial fibrillation with paroxysmal idioventricular rhythm.,3
+Possible ectopic atrial bradycardia with PAC(s),3
+Sinus rhythm with frequent PVCs with PAC(s).,3
+Sinus tachycardia with aberrantly conducted supraventricular complexes with PVCs.,3
+Sinus bradycardia with PVCs,3
+Atrial fibrillation with rapid ventricular response with multifocal PVCs,3
+Sinus rhythm with PVCs with 1st degree A-V block,3
+Probable atrial fibrillation with multifocal PVCs or aberrant ventricular conduction,3
+Possible atrial flutter with PVCs.,3
+Atrial flutter with PVC(s) or aberrant ventricular conduction.,3
+ATRIAL FIBRILLATION WITH SLOW VENTRICULAR RESPONSE,3
+Probable atrial fibrillation with rapid ventricular response with PVC(s) or aberrant ventricular conduction,3
+Sinus rhythm with PVC(s) with PAC(s) with 1st degree A-V block.,3
+Sinus rhythm with PVC(s) with PAC(s) with borderline 1st degree A-V block.,3
+Atrial fibrillation with intermittent conduction defect,3
+Sinus arrhythmia with PVC(s) with 1st degree A-V block.,3
+PACER DETECTION SUSPENDED DUE TO EXTERNAL NOISE-REVIEW ADVISED,3
+REGULAR RHYTHM,3
+Possible ectopic atrial tachycardia with PACs.,3
+POSSIBLE ECTOPIC ATRIAL TACHYCARDIA,3
+Probable atrial fibrillation with uncontrolled ventricular response,3
+Possible atrial flutter with rapid ventricular response with PVC(s).,3
+Sinus arrhythmia with aberrantly conducted supraventricular complexes,3
+Atrial fibrillation with uncontrolled ventricular response with PVCs,3
+Possible ectopic atrial tachycardia with PVCs with PACs.,3
+Complete AV block with wide QRS complex,3
+Sinus rhythm with intermittent conduction defect.,3
+Irregular sinus bradycardia,3
+Probable atrial fibrillation with slow ventricular response,3
+Possible ectopic atrial rhythm with PACs,3
+Regular atrial pacing,3
+Sinus bradycardia with PVC(s) with PAC(s).,3
+Possible atrial flutter with rapid ventricular response with PVCs or aberrant ventricular conduction,3
+Sinus tachycardia with sinus arrhythmia with PVCs.,3
+Atrial fibrillation with rapid ventricular response with frequent PVCs.,3
+Sinus tachycardia with paroxysmal idioventricular rhythm.,2
+Sinus tachycardia with sinus arrhythmia with aberrantly conducted supraventricular complexes.,2
+Sinus tachycardia with PVC(s) with PAC(s) with borderline 1st degree A-V block,2
+Probable atrial fibrillation with slow ventricular response with complete A-V block,2
+Atrial flutter with rapid ventricular response with PVC(s) or aberrant ventricular conduction,2
+Sinus bradycardia with PVC(s) with PAC(s),2
+Atrial fibrillation with fusion complexes,2
+Atrial flutter with 2:1 A-V block.,2
+Sinus tachycardia with sinus arrhythmia with PAC(s).,2
+Sinus rhythm with interpolated PVC(s) with 1st degree A-V block,2
+Sinus rhythm with aberrantly conducted supraventricular complexes with PVC(s).,2
+Sinus rhythm with bigeminal PACs with borderline 1st degree A-V block.,2
+Sinus tachycardia with sinus arrhythmia with 2nd degree (Mobitz II) SA block.,2
+Probable atrial fibrillation with slow ventricular response with complete A-V block.,2
+Sinus rhythm with multifocal PVCs with 1st degree A-V block,2
+Sinus rhythm with frequent PVCs with PAC(s),2
+Atrial fibrillation with multifocal PVCs,2
+Sinus bradycardia with sinus arrhythmia with PAC(s).,2
+Possible atrial flutter with rapid ventricular response with PVCs.,2
+Sinus bradycardia - consider sinus rhythm with 2:1 S-A block.,2
+Sinus bradycardia with PACs with 1st degree A-V block.,2
+Possible ectopic atrial bradycardia with PAC(s).,2
+Sinus bradycardia with sinus arrhythmia with 2nd degree (Mobitz II) SA block.,2
+Atrial fibrillation with non-sustained ventricular tachycardia,2
+Sinus rhythm with aberrantly conducted supraventricular complexes with interpolated PVCs.,2
+with fusion complexes or aberrant ventricular conduction,2
+A-V dual-paced rhythm with some inhibition,2
+Sinus rhythm with aberrantly conducted supraventricular complexes with PVCs,2
+Sinus arrhythmia with multifocal PVCs.,2
+Possible ectopic atrial rhythm with bigeminal PACs,2
+Probable atrial fibrillation with uncontrolled ventricular response with PVC(s),2
+A-V dual-paced complexes w/ some inhibition,2
+Sinus rhythm with aberrantly conducted supraventricular complexes with PVC(s),2
+Possible ectopic atrial bradycardia with PVCs.,2
+Sinus bradycardia with PVCs with 1st degree A-V block.,2
+Probable atrial fibrillation with slow ventricular response.,2
+Probable atrial fibrillation with multifocal PVCs.,2
+Probable atrial fibrillation with rapid ventricular response with PVCs or aberrant ventricular conduction,2
+Sinus tachycardia with interpolated PVC(s).,2
+Atrial fibrillation with uncontrolled ventricular response with PVC(s) or aberrant ventricular conduction.,2
+Sinus tachycardia with sinus arrhythmia with frequent PVCs.,2
+Possible ectopic atrial rhythm with PACs.,2
+Sinus rhythm with frequent multifocal PVCs with borderline 1st degree A-V block,2
+Possible ectopic atrial tachycardia with PAC(s).,2
+Sinus tachycardia with sinus arrhythmia with borderline 1st degree A-V block.,2
+Sinus tachycardia with PVC(s) with borderline 1st degree A-V block,2
+Atrial-paced complexes,2
+Sinus tachycardia with PAC(s) with borderline 1st degree A-V block,2
+Sinus rhythm with frequent multifocal PVCs with 1st degree A-V block.,2
+Sinus rhythm with PVCs with PACs with borderline 1st degree A-V block.,2
+Sinus bradycardia with aberrantly conducted supraventricular complexes.,2
+Possible atrial flutter with rapid ventricular response with PVCs,2
+Sinus rhythm with paroxysmal idioventricular rhythm.,2
+Sinus arrhythmia with PVC(s) with 1st degree A-V block,2
+Sinus tachycardia with irregular rate,2
+Probable atrial fibrillation with rapid ventricular response with frequent PVCs or aberrant ventricular conduction.,2
+Sinus rhythm with aberrantly conducted supraventricular complexes with borderline 1st degree A-V block.,2
+Possible atrial flutter with PVCs,2
+Sinus rhythm with 2nd degree (Mobitz II) SA block.,2
+Sinus tachycardia with multifocal PVCs,2
+Irregular ectopic atrial rhythm with PVCs.,2
+Probable atrial fibrillation with slow ventricular response with PVC(s),2
+Sinus tachycardia with frequent PVCs with PAC(s).,2
+Sinus tachycardia with PACs with borderline 1st degree A-V block.,2
+Sinus rhythm with paroxysmal idioventricular rhythm,2
+ATRIAL FLUTTER,2
+Possible ectopic atrial tachycardia with PVC(s) with PAC(s),2
+Atrial flutter with predominant 4:1 AV block,2
+Sinus bradycardia with PVCs with PACs.,2
+Atrial flutter/fibrillation,2
+Possible ectopic atrial rhythm with bigeminal PACs.,2
+Probable atrial fibrillation with uncontrolled ventricular response with PVCs.,2
+Possible atrial flutter with rapid ventricular response with frequent multifocal PVCs or aberrant ventricular conduction,2
+Sinus rhythm with PVC(s) with PAC(s) with 1st degree A-V block,2
+"Sinus rhythm with 2nd degree A-V block, Mobitz I (Wenckebach).",2
+PROBABLE ATRIAL FIBRILLATION,2
+A-V dissociation with unclassified aberrant complexes,2
+Sinus rhythm with aberrantly conducted supraventricular complexes with multifocal PVCs,2
+Atrial fibrillation with uncontrolled ventricular response with PVCs or aberrant ventricular conduction.,2
+Probable atrial fibrillation with frequent multifocal PVCs or aberrant ventricular conduction.,2
+Sinus tachycardia with PVC(s) with PAC(s) with borderline 1st degree A-V block.,2
+POSSIBLE ECTOPIC ATRIAL BRADYCARDIA,2
+Sinus rhythm with occasional PACs.,2
+Atrial flutter with high degree A-V block.,2
+Sinus rhythm with frequent multifocal PVCs with PACs.,2
+Probable atrial fibrillation with slow ventricular response with PVC(s) or aberrant ventricular conduction.,2
+Atrial fibrillation with uncontrolled ventricular response with PVCs.,2
+Sinus rhythm with frequent multifocal PVCs with 1st degree A-V block,2
+Sinus bradycardia with sinus arrhythmia with PVC(s) with 1st degree A-V block,2
+ACCELERATED IDIOVENTRICULAR RHYTHM,2
+Probable atrial fibrillation with frequent PVCs.,2
+Atrial fibrillation with uncontrolled ventricular response with PVC(s),2
+Possible ectopic atrial rhythm with bigeminal PVCs,2
+Possible atrial flutter with PVC(s),2
+Sinus rhythm with frequent PVCs with borderline 1st degree A-V block.,2
+A-V SEQUENTIAL PACEMAKER,2
+Sinus bradycardia with frequent PVCs.,2
+Sinus tachycardia with frequent multifocal PVCs with PAC(s),2
+Probable atrial fibrillation with frequent PVCs or aberrant ventricular conduction.,2
+Sinus bradycardia with aberrantly conducted supraventricular complexes,2
+Sinus arrhythmia with PVCs with borderline 1st degree A-V block.,2
+POSSIBLE ATRIAL FLUTTER,2
+Failure to sense and/or capture (?magnet),2
+Sinus tachycardia with sinus arrhythmia with frequent multifocal PVCs,2
+Probable atrial fibrillation with uncontrolled ventricular response.,2
+Possible ectopic atrial rhythm with PVCs with PACs.,2
+Atrial flutter with rapid ventricular response with frequent multifocal PVCs or aberrant ventricular conduction,2
+Sinus arrhythmia with frequent PVCs.,1
+Sinus tachycardia with frequent PVCs with borderline 1st degree A-V block,1
+Sinus tachycardia with sinus arrhythmia with frequent multifocal PVCs.,1
+Sinus rhythm with paroxysmal idioventricular rhythm with borderline 1st degree A-V block.,1
+Atrial flutter with predominant 2:1 AV block,1
+Sinus bradycardia with PVCs with PACs,1
+Atrial fibrillation with slow ventricular response with multifocal PVCs.,1
+Sinus bradycardia with frequent multifocal PVCs with 1st degree A-V block.,1
+Sinus tachycardia with PVCs with PACs with borderline 1st degree A-V block,1
+--- Recording unsuitable for analysis - please repeat ---,1
+A-V DISSOCIATION,1
+Sinus tachycardia with multifocal PVCs with PAC(s).,1
+Marked sinus bradycardia with PVC(s),1
+Atrial flutter with rapid ventricular response with PVCs or aberrant ventricular conduction,1
+Atrial fibrillation with slow ventricular response with frequent PVCs or aberrant ventricular conduction,1
+Possible atrial flutter with slow ventricular response with PVCs or aberrant ventricular conduction.,1
+Sinus rhythm with paroxysmal idioventricular rhythm with 1st degree A-V block.,1
+Sinus bradycardia with sinus arrhythmia with frequent PVCs,1
+Probable atrial fibrillation with rapid ventricular response with frequent PVCs or aberrant ventricular conduction,1
+Possible atrial flutter with rapid ventricular response with PVC(s),1
+Possible accelerated junctional rhythm with PVCs.,1
+Possible ectopic atrial rhythm with PVCs.,1
+Sinus arrhythmia with PVC(s) with borderline 1st degree A-V block,1
+Sinus tachycardia with aberrantly conducted supraventricular complexes with PVCs with PACs,1
+"AV block, complete (third degree)",1
+A-flutter/fibrillation w/ complete AV block,1
+Sinus arrhythmia with aberrantly conducted supraventricular complexes with PVC(s).,1
+Sinus bradycardia with frequent PVCs,1
+Atrial flutter with high degree A-V block,1
+Sinus arrhythmia with frequent PVCs with borderline 1st degree A-V block.,1
+Possible atrial flutter with rapid ventricular response with multifocal PVCs or aberrant ventricular conduction,1
+Sinus rhythm with frequent PVCs with PACs.,1
+PROBABLE JUNCTIONAL RHYTHM,1
+IRREGULAR ECTOPIC ATRIAL BRADYCARDIA,1
+Atrial flutter with PVCs.,1
+Irregular ectopic atrial bradycardia with 2nd degree (Mobitz II) SA block.,1
+Afib/flutter and ventricular-paced rhythm,1
+Sinus tachycardia with sinus arrhythmia with frequent PVCs,1
+Probable sinus tachycardia with PVCs.,1
+Sinus bradycardia with PVC(s) with borderline 1st degree A-V block.,1
+Sinus bradycardia with sinus arrhythmia with PVCs with 1st degree A-V block.,1
+"Poor quality data, interpretation may be affected",1
+Sinus rhythm with PVC(s) with PAC(s) with borderline 1st degree A-V block,1
+Sinus rhythm with PVCs with PACs with borderline 1st degree A-V block,1
+PROBABLE SINUS TACHYCARDIA.CONSIDER FLUTTER AND/OR 2:1 A-V BLOCK,1
+Possible ectopic atrial rhythm with multifocal PVCs with PAC(s).,1
+Possible atrial flutter with rapid ventricular response with frequent PVCs or aberrant ventricular conduction,1
+Probable atrial fibrillation with rapid ventricular response with multifocal PVCs or aberrant ventricular conduction.,1
+-------------------- Pediatric ECG interpretation --------------------,1
+Sinus rhythm with frequent multifocal PVCs with PAC(s) with borderline 1st degree A-V block,1
+Sinus rhythm with interpolated PVC(s) with 1st degree A-V block.,1
+Possible junctional rhythm with PVC(s),1
+Sinus rhythm with aberrantly conducted supraventricular complexes with 1st degree A-V block.,1
+Possible atrial flutter with rapid ventricular response with non-sustained ventricular tachycardia.,1
+Sinus bradycardia with sinus arrhythmia with PAC(s) with 1st degree A-V block,1
+Atrial flutter with bigeminal PVCs or aberrant ventricular conduction.,1
+Sinus tachycardia with aberrantly conducted supraventricular complexes with PVC(s) with PAC(s),1
+Sinus rhythm with bigeminal PVCs with 1st degree A-V block,1
+Sinus arrhythmia with multifocal interpolated PVCs.,1
+Atrial fibrillation with frequent multifocal PVCs.,1
+Atrial fibrillation with rapid ventricular response with paroxysmal idioventricular rhythm.,1
+Sinus bradycardia with interpolated PVCs with 1st degree A-V block.,1
+Atrial fibrillation with rapid ventricular response with fusion complexes,1
+Sinus bradycardia with sinus arrhythmia with aberrantly conducted supraventricular complexes,1
+Sinus tachycardia with PVC(s) with borderline 1st degree A-V block.,1
+Possible atrial flutter with uncontrolled ventricular response with multifocal PVCs.,1
+Sinus arrhythmia with PVCs with 1st degree A-V block,1
+Possible ectopic atrial rhythm with multifocal PVCs,1
+Sinus tachycardia with sinus arrhythmia with PAC(s),1
+Atrial fibrillation with rapid ventricular response with intermittent conduction defect.,1
+Sinus arrhythmia with aberrantly conducted supraventricular complexes with 1st degree A-V block.,1
+Sinus arrhythmia with PVCs with borderline 1st degree A-V block,1
+Possible ectopic atrial tachycardia with PVC(s),1
+Irregular ectopic atrial bradycardia with PVC(s).,1
+Atrial flutter with rapid ventricular response with 4:1 A-V block.,1
+Possible ectopic atrial rhythm with multifocal PVCs.,1
+IRREGULAR ECTOPIC ATRIAL RHYTHM,1
+Atrial flutter with multifocal PVCs or aberrant ventricular conduction,1
+Possible ectopic atrial bradycardia with multifocal PVCs.,1
+Sinus tachycardia with sinus arrhythmia with 2nd degree (Mobitz II) SA block,1
+Sinus rhythm with frequent multifocal PVCs with PACs,1
+Possible ectopic atrial rhythm with paroxysmal idioventricular rhythm.,1
+"Extreme tachycardia with wide complex, no further rhythm analysis attempted",1
+Possible ectopic atrial rhythm with PVCs,1
+Possible ectopic atrial rhythm with aberrantly conducted supraventricular complexes.,1
+Possible atrial arrhythmia,1
+Sinus bradycardia with sinus arrhythmia with PACs with 1st degree A-V block.,1
+Sinus arrhythmia with frequent multifocal PVCs.,1
+Sinus tachycardia with frequent multifocal PVCs with borderline 1st degree A-V block.,1
+Sinus rhythm with non-sustained ventricular tachycardia with 1st degree A-V block,1
+Probable atrial fibrillation with complete A-V block,1
+Sinus arrhythmia with interpolated PVCs,1
+Sinus arrhythmia with frequent multifocal PVCs with 1st degree A-V block,1
+Possible ectopic atrial rhythm with varying 2nd degree A-V block,1
+Possible atrial flutter with paroxysmal idioventricular rhythm or aberrant ventricular conduction.,1
+Possible ectopic atrial bradycardia with interpolated PVCs.,1
+Atrial fibrillation with uncontrolled ventricular response with frequent PVCs or aberrant ventricular conduction.,1
+Sinus rhythm with multifocal PVCs with PACs,1
+Sinus rhythm with multifocal interpolated PVCs.,1
+Sinus rhythm with multifocal PVCs with borderline 1st degree A-V block,1
+Sinus rhythm with bigeminal PVCs with borderline 1st degree A-V block,1
+Probable atrial fibrillation with fusion complexes,1
+Sinus arrhythmia with multifocal PVCs with 1st degree A-V block,1
+Atrial flutter with PVC(s) or aberrant ventricular conduction,1
+Probable atrial fibrillation with PVCs or aberrant ventricular conduction.,1
+Sinus arrhythmia with PVCs with 1st degree A-V block.,1
+Sinus rhythm with frequent multifocal PVCs with borderline 1st degree A-V block.,1
+Sinus rhythm with bigeminal PACs with borderline 1st degree A-V block,1
+Probable atrial fibrillation with rapid ventricular response with non-sustained ventricular tachycardia.,1
+Possible ectopic atrial tachycardia with multifocal PVCs.,1
+Probable accelerated junctional rhythm with PVC(s).,1
+Sinus rhythm with 2nd degree (Mobitz II) SA block with 1st degree A-V block.,1
+Sinus tachycardia with frequent PVCs with PACs,1
+Irregular ectopic atrial rhythm with PVC(s).,1
+Probable atrial fibrillation with slow ventricular response with PVCs or aberrant ventricular conduction.,1
+Sinus bradycardia with interpolated PVC(s) with 1st degree A-V block.,1
+Probable atrial fibrillation with rapid ventricular response with frequent PVCs.,1
+Probable accelerated junctional rhythm with frequent PVCs.,1
+Sinus rhythm with frequent multifocal PVCs with PAC(s),1
+Possible ectopic atrial bradycardia with PACs.,1
+ATRIAL FIBRILLATION WITH UNCONTROLLED VENTRICULAR RESPONSE,1
+Sinus rhythm with frequent multifocal PVCs with PACs with borderline 1st degree A-V block.,1
+Possible ectopic atrial rhythm with PVCs with PACs,1
+"Right and left arm electrode reversal, interpretation assumes no reversal",1
+Possible atrial flutter with interpolated PVCs.,1
+Sinus rhythm with frequent PACs with borderline 1st degree A-V block.,1
+IRREGULAR SINUS TACHYCARDIA,1
+Sinus tachycardia with aberrantly conducted supraventricular complexes with PVCs with PACs.,1
+"Second degree AV block, Mobitz II",1
+Possible atrial flutter with PVCs or aberrant ventricular conduction,1
+"Ectopic atrial tachycardia, unifocal",1
+Probable atrial fibrillation with rapid ventricular response with multifocal PVCs.,1
+Sinus arrhythmia with frequent multifocal PVCs with 1st degree A-V block.,1
+Sinus tachycardia with occasional PACs.,1
+Repeat ecg advised,1
+Probable atrial fibrillation with rapid ventricular response with PVCs,1
+Atrial fibrillation with slow ventricular response with frequent PVCs.,1
+Wide-QRS tachycardia,1
+Sinus rhythm with frequent PVCs with PACs,1
+Possible ectopic atrial rhythm with frequent PVCs,1
+Probable atrial fibrillation with rapid ventricular response with frequent multifocal PVCs or aberrant ventricular conduction,1
+Sinus rhythm with aberrantly conducted supraventricular complexes with PVCs with PACs,1
+Sinus rhythm with 2:1 A-V block.,1
+Possible ectopic atrial rhythm with frequent multifocal PVCs with PACs,1
+Sinus tachycardia with fusion complexes,1
+Sinus arrhythmia with multifocal PVCs with borderline 1st degree A-V block.,1
+Sinus tachycardia with frequent multifocal PVCs with PACs.,1
+Probable atrial fibrillation with multifocal PVCs,1
+Atrial flutter with uncontrolled ventricular response,1
+Atrial fibrillation with slow ventricular response with frequent multifocal PVCs or aberrant ventricular conduction,1
+AV sequential pacing.,1
+Sinus arrhythmia with frequent multifocal PVCs,1
+Sinus tachycardia with sinus arrhythmia with PACs with 1st degree A-V block,1
+Probable atrial fibrillation with fusion complexes or aberrant ventricular conduction,1
+Possible atrial flutter with frequent multifocal PVCs or aberrant ventricular conduction,1
+Sinus tachycardia with PACs with borderline 1st degree A-V block,1
+Sinus tachycardia with intermittent conduction defect.,1
+Sinus rhythm with multifocal PVCs with PACs.,1
+Atrial fibrillation with rapid ventricular response with frequent PVCs,1
+Sinus bradycardia with interpolated PVCs.,1
+Sinus rhythm with aberrantly conducted supraventricular complexes with interpolated PVC(s).,1
+Probable atrial fibrillation with PVCs,1
+Sinus rhythm with occasional PACs,1
+Sinus rhythm with aberrantly conducted supraventricular complexes with frequent multifocal PVCs,1
+Possible atrial flutter with slow ventricular response with PVC(s) or aberrant ventricular conduction.,1
+Sinus tachycardia with frequent PVCs with PAC(s),1
+Sinus tachycardia with frequent PVCs with PACs.,1
+Sinus bradycardia with sinus arrhythmia with aberrantly conducted supraventricular complexes with 1st degree A-V block.,1
+Sinus bradycardia with PVC(s) with PAC(s) with borderline 1st degree A-V block,1
+Atrial flutter with slow ventricular response with 4:1 A-V block,1
+Possible ectopic atrial rhythm with multifocal interpolated PVCs.,1
+Possible ectopic atrial rhythm with PVC(s) with PAC(s),1
+Irregular ectopic atrial tachycardia,1
+Probable atrial fibrillation with slow ventricular response with PVCs.,1
+Atrial flutter with rapid ventricular response with PVCs,1
+Sinus bradycardia with sinus arrhythmia with 2nd degree (Mobitz II) SA block,1
+Sinus rhythm with PVCs with PACs with 1st degree A-V block,1
+Sinus arrhythmia with interpolated PVC(s),1
+Sinus bradycardia with sinus arrhythmia with 2nd degree (Mobitz II) SA block with 1st degree A-V block,1
+Sinus tachycardia with aberrantly conducted supraventricular complexes with multifocal PVCs.,1
+Sinus rhythm with interpolated PVCs with PACs with borderline 1st degree A-V block.,1
+Irregular ectopic atrial tachycardia with PAC(s).,1
+Regular A-V sequential pacing,1
+Atrial fibrillation with uncontrolled ventricular response with fusion complexes,1
+Possible junctional rhythm with PVCs.,1
+Atrial flutter with slow ventricular response with high degree A-V block,1
+Sinus bradycardia with sinus arrhythmia with multifocal PVCs,1
+Possible atrial flutter with rapid ventricular response with interpolated PVCs,1
+POSSIBLE IDIOVENTRICULAR RHYTHM WITH SLOW VENTRICULAR RESPONSE,1
+Sinus bradycardia with multifocal PVCs.,1
+Sinus rhythm with 2:1 A-V block,1
+Sinus bradycardia with occasional PACs.,1
+Atrial flutter with predominant 3:1 AV block,1
+Warning: DATA QUALITY MAY AFFECT COMPUTER INTERPRETATION!!,1
+Atrial flutter with slow ventricular response with PVC(s) or aberrant ventricular conduction,1
+Sinus tachycardia with sinus arrhythmia with multifocal PVCs,1
+Irregular ectopic atrial tachycardia with PACs,1
+Irregular ectopic atrial rhythm with PVC(s),1
+"Sinus bradycardia with sinus arrhythmia with 2nd degree A-V block, Mobitz II.",1
+Sinus rhythm with aberrantly conducted supraventricular complexes with interpolated PVCs with PACs.,1
+Supraventricular tachycardia,1
+Sinus tachycardia with aberrantly conducted supraventricular complexes with PVC(s) with PAC(s).,1
+Possible ectopic atrial rhythm with interpolated PVC(s),1
+Atrial fibrillation with slow ventricular response with paroxysmal idioventricular rhythm or aberrant ventricular conduction.,1
+Sinus rhythm with aberrantly conducted supraventricular complexes with 1st degree A-V block,1
+Sinus bradycardia with interpolated PVCs,1
+Probable sinus tachycardia with non-sustained ventricular tachycardia.,1
+Sinus rhythm with frequent multifocal PVCs with PAC(s).,1
+Sinus bradycardia with intermittent conduction defect,1
+Sinus rhythm with non-sustained ventricular tachycardia.,1
+Sinus bradycardia with PACs with 1st degree A-V block,1
+Probable atrial fibrillation with rapid ventricular response with multifocal PVCs or aberrant ventricular conduction,1
+Atrial fibrillation with rapid ventricular response with frequent multifocal PVCs.,1
+Sinus arrhythmia with frequent PVCs,1
+Possible ectopic atrial tachycardia with PVC(s).,1
+Sinus rhythm with aberrantly conducted supraventricular complexes with PACs,1
+Probable atrial fibrillation with uncontrolled ventricular response with PVC(s).,1
+Sinus bradycardia with interpolated PVC(s) with borderline 1st degree A-V block.,1
+Sinus bradycardia with sinus arrhythmia with 2nd degree (Mobitz II) SA block with 1st degree A-V block.,1
+Sinus tachycardia with sinus arrhythmia with PACs.,1
+Atrial flutter with rapid ventricular response with PVC(s).,1
+Possible atrial flutter with frequent PVCs or aberrant ventricular conduction.,1
+Atrial flutter with PVC(s).,1
+Possible atrial flutter with interpolated PVC(s) or aberrant ventricular conduction.,1
+Sinus tachycardia with multifocal PVCs with PAC(s),1
+Predominant 2:1 AV block,1
+Atrial fibrillation with uncontrolled ventricular response with PVC(s) or aberrant ventricular conduction,1
+Possible ectopic atrial rhythm with bigeminal PVCs.,1
+Sinus tachycardia with sinus arrhythmia with PAC(s) with borderline 1st degree A-V block,1
