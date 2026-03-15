@@ -1,6 +1,16 @@
+import os
+from dotenv import load_dotenv
 from google.cloud import bigquery
 
-client = bigquery.Client(project='project-fc29ae8d-18cc-4c2c-adc')
+# To use it, create a .env file and put BIG_QUERY_PROJECT_ID="you project ID" in it.
+# From Bob: Made the change to use environment variable for project ID instead of hardcoding it in the code. 
+# This way, we can keep our project ID private and easily switch between different projects.
+load_dotenv()
+
+if os.environ.get("BIG_QUERY_PROJECT_ID"):
+    client = bigquery.Client(project=os.environ["BIG_QUERY_PROJECT_ID"])
+else:
+    raise ValueError("BIG_QUERY_PROJECT_ID environment variable not set. Please set it in your .env file.")
 
 def icu_query():
     query = """
@@ -49,7 +59,6 @@ def icu_query():
         QUALIFY ROW_NUMBER() over (PARTITION BY icu.stay_id ORDER BY mac.ecg_time) = 1
     """
     return client.query(query).to_dataframe()
-icu_query()
 
 def bucket_ecg_report_0(report):
     if 'rapid ventricular' in report or 'uncontrolled ventricular' in report: # categorize these as 'afib_rvr' includes 'flutter..' rhythms as well
@@ -81,3 +90,6 @@ def bucket_ecg_report_0(report):
     else:
         return report
     
+if __name__ == "__main__":
+    # Test the functions
+    icu_query()
