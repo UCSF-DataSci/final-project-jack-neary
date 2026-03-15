@@ -1,6 +1,10 @@
 from google.cloud import bigquery
+import os
 
-client = bigquery.Client(project='project-fc29ae8d-18cc-4c2c-adc')
+# To use it, create a .env file and put BIG_QUERY_PROJECT_ID="you project ID" in it.
+# From Bob: Made the change to use environment variable for project ID instead of hardcoding it in the code. 
+# This way, we can keep our project ID private and easily switch between different projects.
+client = bigquery.Client(project=os.environ["BIG_QUERY_PROJECT_ID"])
 
 def icu_query():
     query = """
