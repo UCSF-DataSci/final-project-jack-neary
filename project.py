@@ -62,13 +62,21 @@ def bucket_ecg_report_0(report):
         return 'paced'
     elif 'st elevation mi' in report:
         return 'stemi_alert'
-    elif 'atrial fibrillation' in report:
+    elif 'ectopic atrial' in report or 'probable atrial tachycardia' in report:
+        return 'atrial_ectopic'
+    elif 'atrial fibrillation' in report or 'atrial flutter' in report:
         return 'afib'
+    elif 'idioventricular' in report:
+        return 'idioventricular'
+    elif 'supraventricular' in report:
+        return 'supraventricular'
+    elif 'accelerated junctional' in report or 'probable accelerated junctional rhythm' in report or 'possible accelerated junctional rhythm' in report:
+        return 'accelerated_junctional'
     elif 'sinus tachycardia' in report:
         return 'sinus_tachy'
     elif 'sinus bradycardia' in report:
         return 'sinus_brady'
-    elif 'sinus rhythm' in report:
+    elif 'sinus rhythm' in report or 'sinus arrhythmia' in report:
         return 'normal_sinus'
     else:
         return report

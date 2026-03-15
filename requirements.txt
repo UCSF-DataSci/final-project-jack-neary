@@ -4,3 +4,5 @@ db-dtypes
 python-dotenv>=1.0.0
 wfdb
 regex
+matplotlib
+seaborn

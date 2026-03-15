@@ -1,87 +1,46 @@
 ecg_bucket,count
-normal_sinus,15098
-sinus_tachy,4281
-sinus_brady,2514
-afib,2270
+normal_sinus,15670
+sinus_tachy,4256
+afib,2579
+sinus_brady,2508
 afib_rvr,2214
 pvc,2164
 pac,1494
 paced,1129
 stemi_alert,795
-sinus arrhythmia,546
-possible ectopic atrial rhythm,271
-probable accelerated junctional rhythm,263
-regular supraventricular rhythm,236
-accelerated idioventricular rhythm,216
-possible atrial flutter,175
+atrial_ectopic,566
+supraventricular,373
+accelerated_junctional,327
+idioventricular,284
 undetermined rhythm,143
-probable atrial tachycardia,90
-possible ectopic atrial bradycardia,72
 a-v dissociation,69
-probable supraventricular tachycardia,61
-possible idioventricular rhythm with slow ventricular response,60
 probable junctional rhythm,58
-atrial flutter,55
-possible accelerated junctional rhythm,48
 "age not entered, assumed to be  50 years old for purpose of ecg interpretation",42
-possible ectopic atrial tachycardia,37
-sinus arrhythmia with borderline 1st degree a-v block,37
-sinus arrhythmia with 1st degree a-v block,33
 --- pediatric criteria used ---,31
-atrial flutter with 3:1 a-v block,28
-sinus or ectopic atrial rhythm,23
-atrial flutter with 4:1 a-v block,22
 junctional rhythm,21
-irregular ectopic atrial rhythm,20
-ectopic atrial rhythm,18
 wide qrs tachycardia,17
 possible junctional rhythm,16
-accelerated junctional rhythm,16
-possible atrial flutter with slow ventricular response,15
 probable ventricular tachycardia,12
 regular rhythm,9
-sinus arrhythmia with aberrantly conducted supraventricular complexes,7
 a-v dissociation with unclassified aberrant complexes,6
-irregular ectopic atrial tachycardia,6
-irregular ectopic atrial bradycardia,6
 junctional tachycardia,6
-ectopic atrial bradycardia,6
 incomplete analysis due to missing data in precordial lead(s),5
-sinus or ectopic atrial bradycardia,5
 probable sinus (? atrial) tachycardia,5
-probable a-v junctional rhythm,4
-ectopic atrial tachycardia,4
 possible a-v junctional bradycardia,4
 "unknown rhythm, irregular rate",4
-sinus or ectopic atrial tachycardia,3
-atrial flutter with high degree a-v block,3
+probable a-v junctional rhythm,4
 complete av block with wide qrs complex,3
 with fusion complexes or aberrant ventricular conduction,2
-atrial flutter/fibrillation,2
 failure to sense and/or capture (?magnet),2
-atrial flutter with predominant 4:1 av block,2
-atrial flutter with 2:1 a-v block,2
-wide-qrs tachycardia,1
-atrial flutter with predominant 3:1 av block,1
-possible ectopic atrial rhythm with paroxysmal idioventricular rhythm,1
-possible atrial flutter with paroxysmal idioventricular rhythm or aberrant ventricular conduction,1
--------------------- pediatric ecg interpretation --------------------,1
-supraventricular tachycardia,1
---- recording unsuitable for analysis - please repeat ---,1
-sinus arrhythmia with aberrantly conducted supraventricular complexes with 1st degree a-v block,1
-possible ectopic atrial rhythm with aberrantly conducted supraventricular complexes,1
 predominant 2:1 av block,1
-possible ectopic atrial rhythm with varying 2nd degree a-v block,1
-atrial flutter with slow ventricular response with high degree a-v block,1
-atrial flutter with predominant 2:1 av block,1
 repeat ecg advised,1
-"ectopic atrial tachycardia, unifocal",1
-irregular ectopic atrial bradycardia with 2nd degree (mobitz ii) sa block,1
+--- recording unsuitable for analysis - please repeat ---,1
+wide-qrs tachycardia,1
+-------------------- pediatric ecg interpretation --------------------,1
 possible atrial arrhythmia,1
+a-flutter/fibrillation w/ complete av block,1
 "right and left arm electrode reversal, interpretation assumes no reversal",1
-atrial flutter with slow ventricular response with 4:1 a-v block,1
 "poor quality data, interpretation may be affected",1
 "av block, complete (third degree)",1
 "second degree av block, mobitz ii",1
-a-flutter/fibrillation w/ complete av block,1
 "extreme tachycardia with wide complex, no further rhythm analysis attempted",1

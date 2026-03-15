@@ -17,19 +17,44 @@ https://mimic.mit.edu/docs/iv/modules
     - demographic variables (table?)
     - ecg features from ecg table
 
-### report_0
-   - Current buckets
-      - normal_sinus [x]
-      - sinus_tachy [x]
-      - sinus_brady [x]
-      - afib [x]
-      - afib_rvr [x]
-      - pvc [x]
-      - pac [x]
-      - afib_avr [x]
-      - paced [x]
-      - stemi_alert [x]
-   - To make
-      - low degree block
-      - high degree block
-      - atrial_arrhythmia
+### report_0 --> ecg_buckets
+   - categories
+      - sinus_tachy
+      - normal_sinus
+      - afib
+      - sinus_brady
+      - stemi_alert
+      - pvc
+      - pac
+      - paced
+      - accelerated_junctional
+      - other
+      - idioventricular
+      - supraventricular
+      - afib_rvr
+      - atrial_ectopic
+
+### potential predictors
+   - ecg_bucket
+   - first_careunit
+   - last_careunit
+   - gender
+   - age
+   - race
+   - marital_status
+   - language
+   - admission_type
+   - rr_interval
+   - p_onset
+   - p_end
+   - qrs_onset
+   - qrs_end
+   - t_end
+   - p_axis
+   - qrs_axis
+   - t_axis
+
+## to do
+   - set boundaries and impute ecg measurements
+   - calculate age from anchor_age
+   - 
