@@ -1,18 +1,18 @@
 ecg_bucket,count
-normal_sinus,15673
-sinus_tachy,4257
-afib,2585
-sinus_brady,2503
-afib_rvr,2213
-pvc,2163
-pac,1497
-paced,1133
-stemi_alert,793
-atrial_ectopic,567
+normal_sinus,15670
+sinus_tachy,4256
+afib,2579
+sinus_brady,2508
+afib_rvr,2214
+pvc,2164
+pac,1494
+paced,1129
+stemi_alert,795
+atrial_ectopic,566
 supraventricular,373
-accelerated_junctional,326
-idioventricular,282
-undetermined rhythm,142
+accelerated_junctional,327
+idioventricular,284
+undetermined rhythm,143
 a-v dissociation,69
 probable junctional rhythm,58
 "age not entered, assumed to be  50 years old for purpose of ecg interpretation",42
@@ -22,25 +22,25 @@ wide qrs tachycardia,17
 possible junctional rhythm,16
 probable ventricular tachycardia,12
 regular rhythm,9
-junctional tachycardia,6
 a-v dissociation with unclassified aberrant complexes,6
+junctional tachycardia,6
 incomplete analysis due to missing data in precordial lead(s),5
 probable sinus (? atrial) tachycardia,5
-"unknown rhythm, irregular rate",4
 possible a-v junctional bradycardia,4
+"unknown rhythm, irregular rate",4
 probable a-v junctional rhythm,4
 complete av block with wide qrs complex,3
 with fusion complexes or aberrant ventricular conduction,2
 failure to sense and/or capture (?magnet),2
+predominant 2:1 av block,1
+repeat ecg advised,1
+--- recording unsuitable for analysis - please repeat ---,1
 wide-qrs tachycardia,1
+-------------------- pediatric ecg interpretation --------------------,1
 possible atrial arrhythmia,1
 a-flutter/fibrillation w/ complete av block,1
-"extreme tachycardia with wide complex, no further rhythm analysis attempted",1
--------------------- pediatric ecg interpretation --------------------,1
-predominant 2:1 av block,1
---- recording unsuitable for analysis - please repeat ---,1
-"poor quality data, interpretation may be affected",1
 "right and left arm electrode reversal, interpretation assumes no reversal",1
-"second degree av block, mobitz ii",1
-repeat ecg advised,1
+"poor quality data, interpretation may be affected",1
 "av block, complete (third degree)",1
+"second degree av block, mobitz ii",1
+"extreme tachycardia with wide complex, no further rhythm analysis attempted",1

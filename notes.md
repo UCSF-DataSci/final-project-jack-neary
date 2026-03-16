@@ -34,27 +34,23 @@ https://mimic.mit.edu/docs/iv/modules
       - afib_rvr
       - atrial_ectopic
 
-### potential predictors
+### predictors
    - ecg_bucket
-   - first_careunit
-   - last_careunit
+   - care_unit
    - gender
    - age
    - race
    - marital_status
    - language
    - admission_type
+   - admission_location
    - rr_interval
-   - p_onset
-   - p_end
    - qrs_onset
    - qrs_end
    - t_end
-   - p_axis
    - qrs_axis
    - t_axis
+   
+### outcome = hospital_expire_flag
 
-## to do
-   - set boundaries and impute ecg measurements
-   - calculate age from anchor_age
-   - 
+

@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from google.cloud import bigquery
+import pandas as pd
 
 # To use it, create a .env file and put BIG_QUERY_PROJECT_ID="you project ID" in it.
 # From Bob: Made the change to use environment variable for project ID instead of hardcoding it in the code. 
@@ -89,7 +90,53 @@ def bucket_ecg_report_0(report):
         return 'normal_sinus'
     else:
         return report
-    
+
+def simplify_race(race):
+    if pd.isna(race):
+        return 'unknown'
+    race = race.upper()
+    if race in ['UNKNOWN', 'UNABLE TO OBTAIN', 'PATIENT DECLINED TO ANSWER']:
+        return 'unknown'
+    elif 'WHITE' in race or race == 'PORTUGUESE':
+        return 'white'
+    elif 'BLACK/AFRICAN AMERICAN' in race or 'BLACK/CAPE VERDEAN' in race or 'BLACK/CARIBBEAN ISLAND' in race:
+        return 'black_american'
+    elif 'BLACK/AFRICAN' in race:
+        return 'black_african'
+    elif 'HISPANIC' in race or 'LATINO' in race or 'SOUTH AMERICAN' in race:
+        return 'hispanic_latino'
+    elif 'ASIAN' in race:
+        return 'asian'
+    elif 'NATIVE HAWAIIAN' in race or 'PACIFIC ISLANDER' in race:
+        return 'pacific_islander'
+    elif 'AMERICAN INDIAN' in race or 'ALASKA NATIVE' in race:
+        return 'native_american'
+    elif race == 'MULTIPLE RACE/ETHNICITY':
+        return 'multiple'
+    else:
+        return 'other'
+
+def simplify_careunit(unit):
+    if pd.isna(unit):
+        return 'unknown'
+    unit = unit.upper()
+    if 'CVICU' in unit:
+        return 'cvicu'
+    elif 'MICU/SICU' in unit:
+        return 'micu_sicu'
+    elif 'MICU' in unit:
+        return 'micu'
+    elif 'CCU' in unit:
+        return 'ccu'
+    elif 'TSICU' in unit:
+        return 'tsicu'
+    elif 'SICU' in unit:
+        return 'sicu'
+    elif 'NEURO' in unit:
+        return 'neuro'
+    else:
+        return 'other'
+
 if __name__ == "__main__":
     # Test the functions
     icu_query()
