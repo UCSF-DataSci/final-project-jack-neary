@@ -54,3 +54,8 @@ https://mimic.mit.edu/docs/iv/modules
 ### outcome = hospital_expire_flag
 
 
+### labs measurement units
+bicarb mmEq/L
+creatinine mg/dL
+lactate mmol/L
+bun mg/dL
