@@ -2,6 +2,12 @@ import os
 from dotenv import load_dotenv
 from google.cloud import bigquery
 import pandas as pd
+from sklearn.metrics import (
+    roc_curve, auc, confusion_matrix,
+    ConfusionMatrixDisplay, recall_score
+)
+import matplotlib.pyplot as plt
+import numpy as np
 
 # To use it, create a .env file and put BIG_QUERY_PROJECT_ID="you project ID" in it.
 # From Bob: Made the change to use environment variable for project ID instead of hardcoding it in the code. 
@@ -215,6 +221,85 @@ def simplify_careunit(unit):
         return 'neuro'
     else:
         return 'other'
+    
+def plot_roc_curve(pipe, X_test, y_test, model_name, 
+                   color='steelblue', threshold=None, ax=None):
+    """
+    Plot ROC curve for a fitted pipeline.
+    
+    Parameters:
+        pipe       : fitted sklearn Pipeline
+        X_test     : test features (raw, untransformed)
+        y_test     : true labels
+        model_name : string label for the plot title
+        color      : line color
+        threshold  : if provided, marks the operating point on the curve
+        ax         : matplotlib axis to plot on (creates new if None)
+    
+    Returns:
+        ax, roc_auc
+    """
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(6, 5))
+
+    y_prob = pipe.predict_proba(X_test)[:, 1]
+    fpr, tpr, _ = roc_curve(y_test, y_prob)
+    roc_auc = auc(fpr, tpr)
+
+    ax.plot(fpr, tpr, color=color, lw=2,
+            label=f"AUC = {roc_auc:.3f}")
+    ax.plot([0, 1], [0, 1], 'k--', lw=1, label='Random')
+
+    # Mark threshold operating point if provided
+    if threshold is not None:
+        y_pred = (y_prob >= threshold).astype(int)
+        tpr_thresh = recall_score(y_test, y_pred, pos_label=1)
+        fpr_thresh = 1 - recall_score(y_test, y_pred, pos_label=0)
+        ax.scatter(fpr_thresh, tpr_thresh, color=color,
+                   s=100, zorder=5, label=f"Threshold = {threshold}")
+
+    ax.set_xlabel('False Positive Rate', fontsize=11)
+    ax.set_ylabel('True Positive Rate', fontsize=11)
+    ax.set_title(f'{model_name} — ROC Curve', fontsize=13, fontweight='bold')
+    ax.legend(loc='lower right', fontsize=9)
+    ax.grid(alpha=0.3)
+
+    return ax, roc_auc
+
+def plot_confusion_matrix(pipe, X_test, y_test, model_name,
+                          threshold=0.5, ax=None):
+    """
+    Plot confusion matrix for a fitted pipeline.
+    
+    Parameters:
+        pipe       : fitted sklearn Pipeline
+        X_test     : test features (raw, untransformed)
+        y_test     : true labels
+        model_name : string label for the plot title
+        threshold  : classification threshold (default 0.5)
+        ax         : matplotlib axis to plot on (creates new if None)
+    
+    Returns:
+        ax, cm (confusion matrix array)
+    """
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(5, 4))
+
+    y_prob = pipe.predict_proba(X_test)[:, 1]
+    y_pred = (y_prob >= threshold).astype(int)
+    cm = confusion_matrix(y_test, y_pred)
+
+    ConfusionMatrixDisplay(
+        confusion_matrix=cm,
+        display_labels=['Survived', 'Died']
+    ).plot(ax=ax, colorbar=False, cmap='Blues')
+
+    ax.set_title(f'{model_name}\n(threshold = {threshold})',
+                  fontsize=12, fontweight='bold')
+    ax.set_xlabel('Predicted Label', fontsize=11)
+    ax.set_ylabel('True Label', fontsize=11)
+
+    return ax, cm
 
 if __name__ == "__main__":
     # Test the functions
