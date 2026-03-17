@@ -145,6 +145,39 @@ def vitals_query():
     GROUP BY ce.stay_id
     """
     return client.query(query).to_dataframe()
+def labs_query():
+    query = """
+    SELECT
+        icu.stay_id
+        , AVG(CASE WHEN lab.itemid IN (50813, 52442)
+                AND lab.valuenum > 0
+                AND lab.valuenum < 20
+                THEN lab.valuenum END
+        ) AS lactate
+        , AVG(CASE WHEN lab.itemid = 50912
+                AND lab.valuenum > 0
+                AND lab.valuenum < 50
+                THEN lab.valuenum END
+        ) AS creatinine
+        , AVG(CASE WHEN lab.itemid = 51006
+                AND lab.valuenum > 0
+                AND lab.valuenum < 300
+                THEN lab.valuenum END
+        ) AS bun
+        , AVG(CASE WHEN lab.itemid = 50882
+                AND lab.valuenum > 0
+                AND lab.valuenum < 50
+                THEN lab.valuenum END
+        ) AS bicarbonate
+    FROM `physionet-data.mimiciv_3_1_icu.icustays` icu
+    INNER JOIN `physionet-data.mimiciv_3_1_hosp.labevents` lab
+        ON icu.subject_id = lab.subject_id
+        AND lab.charttime BETWEEN icu.intime AND DATETIME_ADD(icu.intime, INTERVAL 24 HOUR)
+    WHERE lab.itemid IN (50813, 52442, 50912, 51006, 50882)
+    GROUP BY icu.stay_id
+    """
+    return client.query(query).to_dataframe()
+
 
 def bucket_ecg_report_0(report):
     if 'rapid ventricular' in report or 'uncontrolled ventricular' in report: # categorize these as 'afib_rvr' includes 'flutter..' rhythms as well

@@ -54,3 +54,6 @@ https://mimic.mit.edu/docs/iv/modules
 ### outcome = hospital_expire_flag
 
 
+bicarb on chemistry 50882
+creatinine on chemistry 50912
+lactate on blood gas 50813 (and 52442)
