@@ -54,6 +54,8 @@ https://mimic.mit.edu/docs/iv/modules
 ### outcome = hospital_expire_flag
 
 
-bicarb on chemistry 50882
-creatinine on chemistry 50912
-lactate on blood gas 50813 (and 52442)
+### labs measurement units
+bicarb mmEq/L
+creatinine mg/dL
+lactate mmol/L
+bun mg/dL
