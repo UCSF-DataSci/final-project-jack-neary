@@ -6,6 +6,7 @@ from sklearn.metrics import (
     roc_curve, auc, confusion_matrix,
     ConfusionMatrixDisplay, recall_score
 )
+from sklearn.metrics import average_precision_score, precision_recall_curve, auc
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -301,6 +302,19 @@ def plot_confusion_matrix(pipe, X_test, y_test, model_name,
 
     return ax, cm
 
+def get_pr_auc(pipe, X_test, y_test):
+    """
+    Calculate Precision-Recall AUC for a fitted pipeline.
+    Average Precision Score = area under PR curve.
+    
+    Returns:
+        pr_auc : float
+    """
+    y_prob = pipe.predict_proba(X_test)[:, 1]
+    pr_auc = average_precision_score(y_test, y_prob)
+    return pr_auc
+
 if __name__ == "__main__":
     # Test the functions
-    icu_query()
+    # icu_query()
+    print("This is a test run of the project.py functions.")
