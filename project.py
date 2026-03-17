@@ -61,6 +61,85 @@ def icu_query():
     """
     return client.query(query).to_dataframe()
 
+def vitals_query():
+    query = """
+    SELECT
+        ce.stay_id
+        , AVG(CASE WHEN itemid IN (220045)
+                AND valuenum > 0
+                AND valuenum < 300
+                THEN valuenum END
+        ) AS heart_rate
+        , AVG(CASE WHEN itemid IN (220179, 220050, 225309)
+                AND valuenum > 0
+                AND valuenum < 400
+                THEN valuenum END
+        ) AS sbp
+        , AVG(CASE WHEN itemid IN (220180, 220051, 225310)
+                    AND valuenum > 0
+                    AND valuenum < 300
+                    THEN valuenum END
+        ) AS dbp
+        , AVG(CASE WHEN itemid IN (220052, 220181, 225312)
+                    AND valuenum > 0
+                    AND valuenum < 300
+                    THEN valuenum END
+        ) AS mbp
+        , AVG(CASE WHEN itemid IN (220210, 224690)
+                    AND valuenum > 0
+                    AND valuenum < 70
+                    THEN valuenum END
+        ) AS resp_rate
+        , ROUND(CAST(
+                AVG(CASE
+                    WHEN itemid IN (223761)
+                        AND valuenum > 70
+                        AND valuenum < 120
+                        THEN (valuenum - 32) / 1.8
+                    WHEN itemid IN (223762)
+                        AND valuenum > 10
+                        AND valuenum < 50
+                        THEN valuenum END)
+                AS NUMERIC), 2) AS temperature
+        , AVG(CASE WHEN itemid IN (220277)
+                    AND valuenum > 0
+                    AND valuenum <= 100
+                    THEN valuenum END
+        ) AS spo2
+        , AVG(CASE WHEN itemid IN (225664, 220621, 226537)
+                    AND valuenum > 0
+                    THEN valuenum END
+        ) AS glucose
+    FROM `physionet-data.mimiciv_3_1_icu.chartevents` ce
+    INNER JOIN `physionet-data.mimiciv_3_1_icu.icustays` icu
+        ON ce.stay_id = icu.stay_id
+    WHERE ce.stay_id IS NOT NULL
+        AND ce.charttime BETWEEN icu.intime AND DATETIME_ADD(icu.intime, INTERVAL 24 HOUR)
+        AND ce.itemid IN
+        (
+            220045 -- Heart Rate
+            , 225309 -- ART BP Systolic
+            , 225310 -- ART BP Diastolic
+            , 225312 -- ART BP Mean
+            , 220050 -- Arterial Blood Pressure systolic
+            , 220051 -- Arterial Blood Pressure diastolic
+            , 220052 -- Arterial Blood Pressure mean
+            , 220179 -- Non Invasive Blood Pressure systolic
+            , 220180 -- Non Invasive Blood Pressure diastolic
+            , 220181 -- Non Invasive Blood Pressure mean
+            , 220210 -- Respiratory Rate
+            , 224690 -- Respiratory Rate (Total)
+            , 220277 -- SPO2, peripheral
+            , 225664 -- Glucose finger stick
+            , 220621 -- Glucose (serum)
+            , 226537 -- Glucose (whole blood)
+            , 223762 -- Temperature Celsius
+            , 223761  -- Temperature Fahrenheit
+        )
+    GROUP BY ce.stay_id
+    """
+    return client.query(query).to_dataframe()
+
 def bucket_ecg_report_0(report):
     if 'rapid ventricular' in report or 'uncontrolled ventricular' in report: # categorize these as 'afib_rvr' includes 'flutter..' rhythms as well
         return 'afib_rvr'
