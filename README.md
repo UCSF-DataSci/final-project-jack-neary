@@ -233,15 +233,27 @@ ds223-final/
  
 ### Model Performance
  
-| Model | Test AUC | Threshold | Deaths Caught (TP) | Deaths Missed (FN) | Recall |
-|-------|----------|-----------|-------------------|-------------------|--------|
-| Logistic Regression | 0.834 | 0.55 | **580/839** | 259 | **69.1%** |
-| Random Forest | 0.840 | 0.20 | 484/839 | 355 | 57.7% |
-| Gradient Boosting | 0.849 | 0.55 | 566/839 | 273 | 67.5% |
-| XGBoost | 0.816 | 0.50 | 398/839 | 441 | 47.4% |
-| XGBoost (Tuned) | **0.852** | 0.55 | 572/839 | 267 | 68.2% |
+| Model | ROC AUC | PR AUC | Threshold | Deaths Caught (TP) | Deaths Missed (FN) | Recall |
+|-------|---------|--------|-----------|-------------------|-------------------|--------|
+| Logistic Regression | 0.834 | 0.458 | 0.55 | **580/839** | 259 | **69.1%** |
+| Random Forest | 0.840 | 0.461 | 0.20 | 484/839 | 355 | 57.7% |
+| Gradient Boosting | 0.849 | 0.492 | 0.55 | 566/839 | 273 | 67.5% |
+| XGBoost | 0.816 | 0.461 | 0.50 | 398/839 | 441 | 47.4% |
+| XGBoost (Tuned) | **0.852** | **0.501** | 0.55 | 572/839 | 267 | 68.2% |
  
-> All models use tuned classification thresholds instead of the default 0.5. Default threshold caused Random Forest and Gradient Boosting to predict almost no deaths due to class imbalance... (More explaination maybe)
+> All models use tuned classification thresholds instead of the default 0.5. Default threshold caused Random Forest and Gradient Boosting to predict almost no deaths due to class imbalance.
+
+> Five models were trained and evaluated on a test set of 6,966 patients (839 deaths, 6,127 survivors). All models significantly outperform the random baseline PR AUC of ~0.12 (equal to the mortality rate), with ROC AUC scores ranging from 0.816 to 0.852 and PR AUC scores ranging from 0.458 to 0.501. XGBoost (Tuned) achieved the highest scores on both metrics (ROC AUC = 0.852, PR AUC = 0.501), confirming it as the best overall model. PR AUC is reported alongside ROC AUC because the dataset is heavily imbalanced (~88% survivors, ~12% deaths) since ROC AUC can appear inflated in such settings, while PR AUC focuses specifically on the model's ability to detect the minority class (deaths) and is therefore the more informative metric for this task.
+
+
+### XGBoost (Tuned) — Threshold Analysis
+ 
+| Threshold | Deaths Caught (TP) | Deaths Missed (FN) | Recall |
+|-----------|-------------------|-------------------|--------|
+| 0.55 | 572/839 | 267 | 68.2% |
+| 0.4 | 701/839 | 138 | 83.6% |
+
+> The classification threshold controls the tradeoff between recall (deaths correctly identified) and precision (false alarm rate). At the default F1-optimised threshold of 0.55, XGBoost (Tuned) correctly identified 572 out of 839 deaths (recall = 68.2%). Lowering the threshold to 0.40 increased recall to 83.6%, correctly identifying 701 deaths and reducing missed deaths from 267 to 138. This is a clinically meaningful improvement of 129 additional deaths caught. This came at the cost of increased false positives, with more survivors incorrectly flagged as high risk. The threshold of 0.40 was selected as the final operating point, prioritising sensitivity given the high cost of missing a true death in an ICU setting.
 
 ### Top Predictive Features (SHAP — XGBoost)
 
