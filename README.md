@@ -179,7 +179,7 @@ ds223-final/
 ├── project.py               # Shared utility functions (imported by notebooks)
 ├── cleaning.ipynb           # Step 1 — data extraction and preprocessing
 ├── modeling.ipynb           # Step 2 — LR, RF, Gradient Boosting, Basic XGBoost
-├── XGBoost.ipynb            # Step 3 — XGBoost training and tuning
+├── XGBoost.ipynb            # Step 3 — XGBoost training and tuning (Merged into modeling.ipynb)
 ├── requirements.txt         # Python dependencies
 ├── notes.md                 # Development notes
 ├── .env                     # GCP project ID (not committed)
@@ -235,31 +235,41 @@ ds223-final/
  
 | Model | Test AUC | Threshold | Deaths Caught (TP) | Deaths Missed (FN) | Recall |
 |-------|----------|-----------|-------------------|-------------------|--------|
-| Logistic Regression | 0.834 | 0.55 | 580/839 | 259 | 69.1% |
+| Logistic Regression | 0.834 | 0.55 | **580/839** | 259 | **69.1%** |
 | Random Forest | 0.840 | 0.20 | 484/839 | 355 | 57.7% |
 | Gradient Boosting | 0.849 | 0.55 | 566/839 | 273 | 67.5% |
 | XGBoost | 0.816 | 0.50 | 398/839 | 441 | 47.4% |
-| XGBoost (Tuned) | **0.852** | 0.55 | **572/839** | 267 | **68.2%** |
+| XGBoost (Tuned) | **0.852** | 0.55 | 572/839 | 267 | 68.2% |
  
 > All models use tuned classification thresholds instead of the default 0.5. Default threshold caused Random Forest and Gradient Boosting to predict almost no deaths due to class imbalance... (More explaination maybe)
 
-### Top Predictive Features (SHAP — [final model]) Need Fix after deciding which final model to use
+### Top Predictive Features (SHAP — XGBoost)
 
-**Lab & Metabolic Features (strongest predictors):**
-1. `bun` — top overall feature; high BUN (blood urea nitrogen) strongly pushes toward death, indicating kidney dysfunction
-2. 
+**Clinical & Care Context Features:**
+1. `care_unit_cvicu` — strongest single predictor; being in CVICU strongly predicts **survival** (large negative SHAP), not being in CVICU pushes toward **death**
+2. `age` — older age pushes toward **death**; younger age toward **survival**
+3. `admission_type_surgical_same_day` — planned same-day surgical admission strongly predicts **survival**; non-surgical emergency admissions push toward **death**
+4. `care_unit_ccu` — CCU admission mildly protective, similar pattern to CVICU but smaller magnitude
+5. `race_unknown` / `marital_status_unknown` — missing demographics pushes toward **death**; proxy for emergency/unplanned admissions
+ 
+**Lab & Metabolic Features:**
+1. `bun` — high BUN pushes toward **death** (kidney dysfunction); low BUN toward **survival**
+2. `lactate` — high lactate strongly pushes toward **death** (tissue hypoperfusion); long right tail indicates some patients with very high lactate have extremely elevated mortality probability
+3. `bicarbonate` — low bicarbonate pushes toward **death** (metabolic acidosis); high bicarbonate protective — direction opposite to most features
+4. `creatinine` — mixed signal; moderately elevated creatinine pushes toward **death**, very high creatinine patients may already be managed (dialysis)
  
 **Vital Sign Features:**
-1. `resp_rate` — high respiratory rate strongly associated with death; marker of respiratory distress
-2. 
+1. `resp_rate` — high respiratory rate pushes toward **death**; marker of respiratory distress
+2. `sbp` — low systolic BP pushes toward **death**; high SBP protective (hemodynamic stability)
+3. `spo2` — mixed signal; low SpO2 pushes toward **death**, but very high SpO2 may reflect supplemental oxygen use masking underlying severity
+4. `dbp` — low diastolic BP pushes toward **death**; consistent with SBP finding
+5. `heart_rate` — low heart rate (bradycardia) pushes toward **death**; consistent with rr_interval finding
+6. `temperature` — bidirectional effect; both fever and hypothermia associated with mortality
  
 **ECG Features:**
-1. `rr_interval` — still a meaningful ECG predictor; high RR (bradycardia) pushes toward death
-2. `
- 
-**Non-ECG Clinical Features:**
-1. `care_unit_cvicu` — being in CVICU strongly protective (specialized cardiac care)
-2. 
+1. `rr_interval` — high RR interval (bradycardia) pushes toward **death**; remains independently predictive after controlling for vitals and labs
+2. `ecg_bucket_normal_sinus` — weak predictor; clustered near zero
+3. `t_end` — weakest ECG predictor in top 20; minimal spread around zero
  
 > Short summary of findings.
 
