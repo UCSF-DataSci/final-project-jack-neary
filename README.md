@@ -28,7 +28,7 @@ The core research question is:
 | `mimiciv_3_1_hosp.patients` | Patient demographics (age, gender) |
 | `mimiciv_ecg.machine_measurements` | ECG machine-generated measurements |
 | `mimiciv_3_1_icu.chartevents` | ICU charted vitals (heart rate, BP, SpO2, temperature, etc.) |
-| `mimiciv_3_1_hosp.labevents` |  |
+| `mimiciv_3_1_hosp.labevents` | Laboratory results (lactate, creatinine, BUN, bicarbonate)|
  
 ### Input Features
  
@@ -36,41 +36,41 @@ The core research question is:
  
 | Feature | Description | Clinical Relevance |
 |---------|-------------|-------------------|
-| `rr_interval` | Time between R peaks (ms) |  |
-| `qrs_onset` | Start of QRS complex (ms) |  |
-| `qrs_end` | End of QRS complex (ms) |  |
-| `t_end` | End of T wave (ms) |  |
-| `qrs_axis` | QRS electrical axis (degrees) |  |
-| `t_axis` | T wave axis (degrees) |  |
+| `rr_interval` | Time between R peaks (ms) |  Reflects heart rate and rhythm regularity; prolonged or irregular RR indicates arrhythmia|
+| `qrs_onset` | Start of QRS complex (ms) | Marks onset of ventricular depolarization; used to calculate QRS duration |
+| `qrs_end` | End of QRS complex (ms) | Marks end of ventricular depolarization; wide QRS indicates conduction delay or bundle branch block |
+| `t_end` | End of T wave (ms) | Marks end of ventricular repolarization; prolonged QT (QRS onset to T end) associated with arrhythmia risk |
+| `qrs_axis` | QRS electrical axis (degrees) | Direction of ventricular depolarization; axis deviation indicates ventricular hypertrophy or conduction abnormality |
+| `t_axis` | T wave axis (degrees) | Direction of repolarization; T axis deviation associated with ischemia and electrolyte abnormalities |
  
 **Demographic Features (numeric)**
- 
+
 | Feature | Description |
 |---------|-------------|
-| `age` |  |
-| `gender` |  |
- 
-**Vital Sign Features (continuous, averaged over ICU stay)**
- 
-| Feature | Description | Clinical Relevance |
-|---------|-------------|-------------------|
-| `heart_rate` |  |  |
-| `sbp` | Systolic blood pressure (mmHg) |  |
-| `dbp` | Diastolic blood pressure (mmHg) |  |
-| `mbp` |  |  |
-| `resp_rate` |  |  |
-| `spo2` |  |  |
-| `temperature` | Body temperature (°C) |  |
-| `glucose` | Blood glucose (mg/dL) |  |
+| `age` | Patient age at time of ICU admission |
+| `gender` | Patient sex encoded as 0 (male) or 1 (female) |
 
-**Lab Features (continuous, closest value to ICU admission)**
- 
+**Vital Sign Features (continuous, averaged over first 24h of ICU admission)**
+
 | Feature | Description | Clinical Relevance |
 |---------|-------------|-------------------|
-| `lactate` |  |  |
-| `bun` |  |  |
-| `creatinine` |  |  |
-| `bicarbonate` |  |  |
+| `heart_rate` | Heart rate (bpm) | Tachycardia and bradycardia both indicate physiological stress |
+| `sbp` | Systolic blood pressure (mmHg) | Low SBP indicates hemodynamic compromise and shock |
+| `dbp` | Diastolic blood pressure (mmHg) | Reflects vascular resistance; low DBP seen in sepsis |
+| `mbp` | Mean arterial pressure (mmHg) | Best single measure of perfusion pressure; target in ICU resuscitation |
+| `resp_rate` | Respiratory rate (breaths/min) | Tachypnea is an early marker of respiratory failure and sepsis |
+| `spo2` | Peripheral oxygen saturation (%) | Low SpO2 indicates hypoxemia and respiratory failure |
+| `temperature` | Body temperature (°C) | Fever and hypothermia both associated with infection and poor outcomes |
+| `glucose` | Blood glucose (mg/dL) | Hyperglycemia common in critical illness; both extremes associated with mortality |
+
+**Lab Features (continuous, averaged over first 24h of ICU admission)**
+
+| Feature | Description | Clinical Relevance |
+|---------|-------------|-------------------|
+| `lactate` | Serum lactate (mmol/L) | Best single predictor of sepsis mortality; elevated lactate indicates tissue hypoperfusion |
+| `bun` | Blood urea nitrogen (mg/dL) | Marker of kidney function and protein catabolism; elevated in AKI and critical illness |
+| `creatinine` | Serum creatinine (mg/dL) | Primary marker of kidney function; elevated in acute kidney injury |
+| `bicarbonate` | Serum bicarbonate (mEq/L) | Marker of metabolic acid-base status; low bicarb indicates metabolic acidosis |
   
 **Categorical Features (one-hot encoded)**
  
@@ -269,6 +269,6 @@ ds223-final/
 - Johnson, A., Bulgarelli, L., Pollard, T., Gow, B., Moody, B., Horng, S., Celi, L. A., & Mark, R. (2024). MIMIC-IV (version 3.1). PhysioNet. RRID:SCR_007345. https://doi.org/10.13026/kpb9-mt58. 
 - Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220. RRID:SCR_007345. 
 - Gow, B., Pollard, T., Nathanson, L. A., Johnson, A., Moody, B., Fernandes, C., Greenbaum, N., Waks, J. W., Eslami, P., Carbonati, T., Chaudhari, A., Herbst, E., Moukheiber, D., Berkowitz, S., Mark, R., & Horng, S. (2023). MIMIC-IV-ECG: Diagnostic Electrocardiogram Matched Subset (version 1.0). PhysioNet. RRID:SCR_007345. https://doi.org/10.13026/4nqg-sb35. 
-- https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iv/concepts/measurement (adapted vitals_query from here)
+- Johnson, A., et al. (2024). mimic-code: MIMIC-IV concepts/measurement [Software]. GitHub. https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iv/concepts/measurement
 
 
