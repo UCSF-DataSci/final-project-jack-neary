@@ -3,7 +3,7 @@
  
 ## Overview
  
-This project investigates which ECG features are most predictive of in-hospital mortality among ICU patients using the MIMIC-IV clinical database. We build and compare multiple machine learning models — Logistic Regression, Random Forest, Gradient Boosting, and XGBoost — trained on ECG measurements and patient demographics extracted from BigQuery.
+This project investigates which ECG features are most predictive of in-hospital mortality among ICU patients using the MIMIC-IV clinical database. We build and compare multiple machine learning models (Logistic Regression, Random Forest, Gradient Boosting, and XGBoost) trained on ECG measurements, patient demographics, and vital sign extracted from BigQuery.
  
 The core research question is:
  
@@ -86,8 +86,101 @@ The core research question is:
 | Training set (80%) | ~28,000 | ~12% |
 | Test set (20%) | ~7,000 | ~12% |
 
+---
+
 ## How to Run
 
+### 1. Prerequisites
+ 
+**Python version:** 3.13+
+ 
+**Create and activate a virtual environment:**
+```bash
+# Create virtual environment
+python -m venv venv
+ 
+# Activate — macOS/Linux
+source venv/bin/activate
+ 
+# Activate — Windows
+venv\Scripts\activate
+```
+ 
+**Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+ 
+> Make sure your virtual environment is activated before running `pip install`. You should see `(venv)` in your terminal prompt when it is active.
+ 
+### 2. Google Cloud Setup
+ 
+```bash
+# Install gcloud CLI: https://cloud.google.com/sdk/docs/install
+gcloud auth application-default login
+gcloud config set project YOUR_PROJECT_ID
+gcloud auth application-default set-quota-project YOUR_PROJECT_ID
+```
+ 
+### 3. PhysioNet Access
+ 
+1. Register at [physionet.org](https://physionet.org/register/)
+2. Complete CITI training
+3. Request access to [MIMIC-IV ECG](https://physionet.org/content/mimic-iv-ecg/)
+4. Link your Google account at [physionet.org/settings/cloud](https://physionet.org/settings/cloud/)
+ 
+### 4. Environment Setup
+ 
+Create a `.env` file in the project root:
+```
+BIG_QUERY_PROJECT_ID=your-gcp-project-id
+```
+
+### 5. Run the Analysis
+ 
+The analysis is split across three Jupyter notebooks. Run them in order:
+ 
+**Step 1 — Data cleaning**
+```bash
+jupyter notebook cleaning.ipynb
+```
+Connects to BigQuery, extracts ICU stays, ECG measurements, vital signs, and demographics, cleans and preprocesses the data, and saves the output for modeling.
+ 
+**Step 2 — Baseline modeling**
+```bash
+jupyter notebook modeling.ipynb
+```
+Trains and evaluates Logistic Regression, Random Forest, Gradient Boosting, and untuned XGBoost. Includes threshold tuning, ROC curves, confusion matrices, and SHAP analysis.
+ 
+**Step 3 — XGBoost modeling**
+```bash
+jupyter notebook XGBoost.ipynb
+```
+Trains and tunes XGBoost with `scale_pos_weight` for class imbalance. Includes hyperparameter search, early stopping, and final model evaluation.
+ 
+> `project.py` contains shared utility functions (e.g. `plot_roc_curve`, `plot_confusion_matrix`, `find_best_threshold`, `run_shap`) imported by the notebooks. Do not run it directly.
+
+ 
+---
+ 
+## Project Structure (Need fix)
+ 
+```
+ds223-final/
+├── project.py               # Main script
+├── .env                     # GCP project ID (not committed)
+├── .gitignore               # Excludes .env and cached data
+├── README.md                # This file
+└── data/
+    ├── cleaned_data.csv # cleaned data after running cleaning.ipynb
+└── sanity_outputs/
+    ├── model_evaluation.png # ROC curves + confusion matrices
+    ├── shap_summary.png     # SHAP dot plot
+    ├── shap_bar.png         # SHAP bar chart
+    └── icu_ecg_data.parquet # Cached BigQuery results
+```
+ 
+---
 
 ## Decisions & Trade-offs
 
