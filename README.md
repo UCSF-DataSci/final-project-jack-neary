@@ -172,21 +172,32 @@ Trains and tunes XGBoost with `scale_pos_weight` for class imbalance. Includes h
  
 ---
  
-## Project Structure (Need fix)
+## Project Structure (Might Need Updates)
  
 ```
 ds223-final/
-├── project.py               # Main script
+├── project.py               # Shared utility functions (imported by notebooks)
+├── cleaning.ipynb           # Step 1 — data extraction and preprocessing
+├── modeling.ipynb           # Step 2 — LR, RF, Gradient Boosting, Basic XGBoost
+├── XGBoost.ipynb            # Step 3 — XGBoost training and tuning
+├── requirements.txt         # Python dependencies
+├── notes.md                 # Development notes
 ├── .env                     # GCP project ID (not committed)
-├── .gitignore               # Excludes .env and cached data
+├── .gitignore               # Excludes .env, venv, and cached data
 ├── README.md                # This file
-└── data/
-    ├── cleaned_data.csv # cleaned data after running cleaning.ipynb
+├── data/
+│   └── cleaned_data.csv     # Cleaned dataset output from cleaning.ipynb
+├── icu_data.csv             # Raw ICU data extracted from BigQuery (might need to remvoe this)
 └── sanity_outputs/
-    ├── model_evaluation.png # ROC curves + confusion matrices
-    ├── shap_summary.png     # SHAP dot plot
-    ├── shap_bar.png         # SHAP bar chart
-    └── icu_ecg_data.parquet # Cached BigQuery results
+    ├── feature_importance.png              # Top 15 feature importances (model name)
+    ├── model_evaluation.png               # ROC curves + confusion matrices (all models)
+    ├── xgboost_tuned_evaluation.png       # Tuned XGBoost ROC + confusion matrix
+    ├── shap_summary.png                   # SHAP dot plot ()
+    ├── shap_bar.png                       # SHAP bar chart ()
+    ├── initial_drop.csv                   # [description]
+    ├── original_ecg_report0_frequency.csv # [description]
+    ├── post_bucket_function.csv           # [description]
+    └── report0_cleaned.csv               # [description]
 ```
  
 ---
