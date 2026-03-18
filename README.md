@@ -62,6 +62,15 @@ The core research question is:
 | `spo2` |  |  |
 | `temperature` | Body temperature (°C) |  |
 | `glucose` | Blood glucose (mg/dL) |  |
+
+**Lab Features (continuous, closest value to ICU admission)**
+ 
+| Feature | Description | Clinical Relevance |
+|---------|-------------|-------------------|
+| `lactate` |  |  |
+| `bun` |  |  |
+| `creatinine` |  |  |
+| `bicarbonate` |  |  |
   
 **Categorical Features (one-hot encoded)**
  
@@ -184,9 +193,64 @@ ds223-final/
 
 ## Decisions & Trade-offs
 
+### Data Decisions
+ 
+| Decision | Rationale | Trade-off |
+|----------|-----------|-----------|
+|  |  |  |
+
+### Modeling Decisions
+ 
+| Decision | Rationale | Trade-off |
+|----------|-----------|-----------|
+| `class_weight='balanced'` for LR and RF | Handles ~88/12 class imbalance | May reduce precision |
+| `scale_pos_weight` for XGBoost | Built-in imbalance handling | Requires tuning |
+| `sample_weight` for Gradient Boosting | No native class_weight parameter | Manual step needed |
+| Threshold tuning (not default 0.5) | Default 0.5 caused RF/GB to predict almost no deaths | Lower threshold increases false positives |
+| `StratifiedKFold(5)` | Preserves class ratio in each fold | More compute than KFold |
+| SHAP on 500-sample subset | Full test set SHAP takes 30+ mins | Slightly less precise SHAP estimates |
+ 
+### Features Cut for Time
+ 
+- **Comorbidity scores** (Charlson index, SOFA score) — standard ICU risk scores, widely used in clinical mortality research
+- **Longitudinal ECG features** — using multiple ECGs per stay instead of just the first would capture deterioration over time
+- **Medication data** (vasopressors, sedatives) — proxy for severity of illness
+ 
+---
 
 ## Example Output
+ 
+### Model Performance
+ 
+| Model | Test AUC | Threshold | Deaths Caught (TP) | Deaths Missed (FN) | Recall |
+|-------|----------|-----------|-------------------|-------------------|--------|
+| Logistic Regression | 0.834 | 0.55 | 580/839 | 259 | 69.1% |
+| Random Forest | 0.840 | 0.20 | 484/839 | 355 | 57.7% |
+| Gradient Boosting | 0.849 | 0.55 | 566/839 | 273 | 67.5% |
+| XGBoost | 0.816 | 0.50 | 398/839 | 441 | 47.4% |
+| XGBoost (Tuned) | **0.852** | 0.55 | **572/839** | 267 | **68.2%** |
+ 
+> All models use tuned classification thresholds instead of the default 0.5. Default threshold caused Random Forest and Gradient Boosting to predict almost no deaths due to class imbalance... (More explaination maybe)
 
+### Top Predictive Features (SHAP — [final model]) Need Fix after deciding which final model to use
+
+**Lab & Metabolic Features (strongest predictors):**
+1. `bun` — top overall feature; high BUN (blood urea nitrogen) strongly pushes toward death, indicating kidney dysfunction
+2. 
+ 
+**Vital Sign Features:**
+1. `resp_rate` — high respiratory rate strongly associated with death; marker of respiratory distress
+2. 
+ 
+**ECG Features:**
+1. `rr_interval` — still a meaningful ECG predictor; high RR (bradycardia) pushes toward death
+2. `
+ 
+**Non-ECG Clinical Features:**
+1. `care_unit_cvicu` — being in CVICU strongly protective (specialized cardiac care)
+2. 
+ 
+> Short summary of findings.
 
 ## Citations
  
