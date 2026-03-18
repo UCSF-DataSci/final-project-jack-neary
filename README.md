@@ -167,7 +167,7 @@ jupyter notebook XGBoost.ipynb
 ```
 Trains and tunes XGBoost with `scale_pos_weight` for class imbalance. Includes hyperparameter search, early stopping, and final model evaluation.
  
-> `project.py` contains shared utility functions (e.g. `plot_roc_curve`, `plot_confusion_matrix`, `find_best_threshold`, `run_shap`) imported by the notebooks. Do not run it directly.
+> `project.py` contains shared utility functions (e.g. `plot_roc_curve`, `plot_confusion_matrix`) imported by the notebooks. Do not run it directly.
 
  
 ---
