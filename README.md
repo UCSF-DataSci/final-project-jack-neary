@@ -9,7 +9,7 @@ This project investigates which ECG features, vital signs, and biomarkers are mo
  
 The core research question is:
  
-> **Which admission-time clinical features best predict in-hospital mortality among ICU patients in the MIMIC-IV dataset?**
+> **Can routinely collected EHR data — including ECG rhythm, vital signs, and lab values — predict ICU mortality in the MIMIC-IV ICU database?**
  
 ---
 
@@ -191,13 +191,13 @@ Trains and tunes XGBoost with `scale_pos_weight` for class imbalance. Includes h
  
 ---
  
-## Project Structure (Might Need Updates)
+## Project Structure
  
 ```
 ds223-final/
 ├── project.py               # Shared utility functions (imported by notebooks)
 ├── cleaning.ipynb           # Step 1 — data extraction and preprocessing
-├── modeling.ipynb           # Step 2 — LR, RF, Gradient Boosting, Basic XGBoost
+├── modeling.ipynb           # Step 2 — LR, RF, Gradient Boosting, Basic XGBoost, & tuned XGBoost results
 ├── XGBoost.ipynb            # Step 3 — XGBoost training and tuning (Merged into modeling.ipynb)
 ├── requirements.txt         # Python dependencies
 ├── notes.md                 # Development notes
@@ -206,17 +206,16 @@ ds223-final/
 ├── README.md                # This file
 ├── data/
 │   └── cleaned_data.csv     # Cleaned dataset output from cleaning.ipynb
-├── icu_data.csv             # Raw ICU data extracted from BigQuery (might need to remvoe this)
 └── sanity_outputs/
-    ├── feature_importance.png              # Top 15 feature importances (model name)
+    ├── feature_importance.png              # Top 15 feature importances (XGBoost)
     ├── model_evaluation.png               # ROC curves + confusion matrices (all models)
     ├── xgboost_tuned_evaluation.png       # Tuned XGBoost ROC + confusion matrix
-    ├── shap_summary.png                   # SHAP dot plot ()
-    ├── shap_bar.png                       # SHAP bar chart ()
-    ├── initial_drop.csv                   # [description]
-    ├── original_ecg_report0_frequency.csv # [description]
-    ├── post_bucket_function.csv           # [description]
-    └── report0_cleaned.csv               # [description]
+    ├── shap_summary.png                   # SHAP dot plot (XGBoost)
+    ├── shap_bar.png                       # SHAP bar chart (XGBoost)
+    ├── initial_drop.csv                   # ECG report_0 value counts after lowercasing and dropping warning rows, before bucketing
+    ├── original_ecg_report0_frequency.csv # ECG report_0 value counts before any cleaning (raw strings)
+    ├── post_bucket_function.csv           # ECG bucket counts after bucketing function applied
+    └── report0_cleaned.csv               # ECG bucket counts after unbucketed reports relabeled as 'other'
 ```
  
 ---
