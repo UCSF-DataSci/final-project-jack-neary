@@ -1,13 +1,15 @@
-<!-- brew install google-cloud-sdk -->
 # ECG-Based ICU Mortality Prediction
- 
+
+## Introduction
+ICU mortality is one of the most time-sensitive predictions in medicine. Clinicians currently rely on manual scoring systems like APACHE-II, which require bedside calculation of 12 physiological variables. These scores are labor-intensive, subject to human error, and notably exclude cardiac rhythm data entirely — despite arrhythmias being common and clinically significant in the ICU.
+
+This project asks whether a fully automated model built from structured EHR data — including ECG findings, vital signs, and lab values — can match APACHE-II's predictive performance without manual scoring.
 ## Overview
- 
-This project investigates which ECG features are most predictive of in-hospital mortality among ICU patients using the MIMIC-IV clinical database. We build and compare multiple machine learning models (Logistic Regression, Random Forest, Gradient Boosting, and XGBoost) trained on ECG measurements, patient demographics, and vital sign extracted from BigQuery.
+This project investigates which ECG features, vital signs, and biomarkers are most predictive of in-hospital mortality among ICU patients using the MIMIC-IV clinical database. We build and compare multiple machine learning models (Logistic Regression, Random Forest, Gradient Boosting, and XGBoost) trained on ECG measurements, patient demographics, and vital sign extracted from BigQuery.
  
 The core research question is:
  
-> **Among ICU patients with ECG recordings, which ECG features are most predictive of in-hospital mortality?**
+> **Which admission-time clinical features best predict in-hospital mortality among ICU patients in the MIMIC-IV dataset?**
  
 ---
 
@@ -82,11 +84,11 @@ The core research question is:
 | `language` | English, Spanish, Other, Unknown |
 | `marital_status` | Married, Single, Divorced, Unknown |
 | `race` | White, Black, Asian, Hispanic, Unknown, Other |
-| `ecg_bucket` | Normal sinus, Atrial fibrillation, Other |
+| `ecg_bucket` | `normal_sinus`, `afib`, `afib_rvr`, `sinus_tachy`, `sinus_brady`, `paced`, `pvc`, `pac`, `atrial_ectopic`, `supraventricular`, `accelerated_junctional`, `idioventricular`, `other` |
  
 ### Target Variable
-- `hospital_expire_flag`: binary (0 = survived, 1 = died in hospital)
- 
+- `hospital_expire_flag`: binary (0 = survived, 1 = died in icu)
+
 ### Dataset Dimensions
  
 | Split | Rows | Mortality Rate |
@@ -96,7 +98,24 @@ The core research question is:
 | Test set (20%) | ~7,000 | ~12% |
 
 ---
+## Data Cleaning and Preprocessing Decisions
 
+### ECG Report Bucketing
+Each ICU stay had a free-text ECG report field (`report_0`). Rather than one-hot encoding thousands of unique report strings, we wrote a keyword-based bucketing function that maps each report to one of 13 clinical rhythm categories. Categories were ordered by clinical priority — for example, `afib_rvr` (atrial fibrillation with rapid ventricular response) is checked before `afib` so that more specific diagnoses take precedence. Reports that didn't match any category were labeled `other` (~1.3% of records). This preserves clinically meaningful rhythm distinctions while keeping the feature space manageable.
+
+### ECG Measurement Cleaning
+Three columns — `p_onset`, `p_end`, and `p_axis` — were dropped entirely because over 50% of values were the sentinel value 29999, indicating the machine could not compute P wave timing. Retaining these would have required imputing the majority of a column with no real signal. For remaining ECG measurements, values above 4000ms or axes outside ±180° were nulled as physiologically impossible before imputation. Missing values were then imputed using the median of each patient's ECG bucket category, since patients in the same rhythm group have similar underlying electrophysiology.
+
+### Vitals and Lab Averaging
+Rather than taking a single admission snapshot, all vital signs and lab values were averaged over the first 24 hours of ICU admission. This reduced missingness from ~40% to ~6% and better represents a patient's early ICU course than any single measurement. Remaining missing values were imputed using the ECG bucket median, with a global median fallback for buckets with no available values.
+
+### Categorical Feature Simplification
+Race was collapsed from 30+ inconsistently formatted MIMIC-IV strings into six broad categories (White, Black, Asian, Hispanic, Unknown, Other). Care unit was simplified from raw unit names to six clinical groupings (CVICU, MICU, CCU, SICU, NEURO, MICU/SICU). First and last care unit were identical for all patients in the dataset, so they were collapsed into a single column.
+
+### Leakage Prevention
+`in_time`, `out_time`, and `los` (length of stay) were dropped from the feature set. These variables are only known after discharge and would constitute data leakage — the model cannot use information that isn't available at the time of prediction.
+
+---
 ## How to Run
 
 ### 1. Prerequisites
@@ -208,7 +227,15 @@ ds223-final/
  
 | Decision | Rationale | Trade-off |
 |----------|-----------|-----------|
-|  |  |  |
+| Drop `p_onset`, `p_end`, `p_axis` | >50% of values were sentinel value 29999 — not physiologically meaningful | Lose P wave features which can indicate atrial pathology |
+| Null ECG measurements >4000ms; axes outside ±180° | Values outside these ranges are physiologically impossible | Small amount of real extreme values may be lost |
+| Impute missing ECG measurements with ECG bucket median | Patients in the same rhythm category have similar underlying physiology | Reduces variance within buckets; may mask true missingness patterns |
+| Average vitals and labs over first 24h (not admission snapshot) | Reduces missingness from ~40% to ~6%; more representative of early ICU course | Loses time-series dynamics within the 24h window |
+| Impute missing vitals/labs with ECG bucket median, then global median | Maintains physiological grouping structure | Introduces bias if buckets are not clinically homogeneous |
+| Simplify race into broad categories | MIMIC-IV has 30+ race strings with inconsistent formatting | Loses granularity; broad categories may obscure health disparity signals |
+| Collapse first/last care unit into single column | No patient in the dataset had a different first vs. last care unit | Assumes care unit is static across ICU stay |
+| Drop `in_time`, `out_time`, `los` | Would cause data leakage — LOS and discharge time are only known retrospectively | Lose potentially useful severity signal |
+| ECG bucket "other" category | ~1.3% of reports don't match any named rhythm pattern | Small heterogeneous group; model may not learn meaningful signal from it |
 
 ### Modeling Decisions
  
@@ -282,8 +309,26 @@ ds223-final/
 1. `rr_interval` — high RR interval (bradycardia) pushes toward **death**; remains independently predictive after controlling for vitals and labs
 2. `ecg_bucket_normal_sinus` — weak predictor; clustered near zero
 3. `t_end` — weakest ECG predictor in top 20; minimal spread around zero
- 
-> Short summary of findings.
+
+---
+## Limitations
+
+- **Single-center retrospective data** — all patients are from Beth Israel Deaconess Medical Center (MIMIC-IV). Generalizability to other institutions is unknown.
+- **Low precision at clinical threshold** — at threshold=0.40, precision is 0.27, meaning roughly 3 in 4 flagged patients do not die. Sustained deployment could cause alert fatigue.
+- **First ECG only** — only the ECG nearest to ICU admission is used. Rhythm changes over the ICU stay are not captured.
+- **Missing severity variables** — SOFA score, GCS, and vasopressor use are not included. These are standard ICU mortality predictors.
+- **Imputation may mask clinical signal** — missing lab values were imputed with bucket medians. In practice, a missing lactate often means the clinician didn't suspect sepsis — missingness itself carries information.
+- **No prospective validation** — model performance on future patients or at a different institution has not been tested.
+---
+## Conclusion
+
+Across all four model types, XGBoost with tuned hyperparameters and class imbalance weighting achieved the best performance (ROC AUC = 0.852, PR AUC = 0.501). At a classification threshold of 0.40, the model correctly identified 701 of 839 deaths in the test set (recall = 83.6%). SHAP analysis identified lactate, BUN, bicarbonate, and respiratory rate as the strongest mortality predictors, consistent with established clinical understanding of sepsis and organ failure. ECG features — particularly RR interval — contributed independently beyond vitals and labs.
+
+APACHE-II, the clinical standard for ICU mortality prediction, typically achieves ROC AUC in the range of 0.83–0.88 depending on the cohort. Our model performs within this range while being fully automated from structured EHR data — no manual bedside scoring required. Importantly, APACHE-II does not incorporate cardiac rhythm data. The independent contribution of ECG features in our model suggests that rhythm information adds predictive signal that standard severity scores miss entirely.
+
+This model is not intended to replace APACHE-II. It demonstrates that an automated pipeline combining ECG findings, vital signs, and lab values from EHR data can match the discriminative performance of manual severity scoring — and may serve as a useful complementary screening tool, particularly in settings where APACHE-II scoring is delayed or inconsistently applied. It fills gaps that existing severity scores leave open: APACHE-II ignores cardiac rhythm entirely, SOFA score does not incorporate ECG data, and neither accounts for the context of arrhythmias that ECG bucketing captures. By integrating rhythm classification directly into a mortality prediction pipeline, this approach surfaces a clinically relevant signal that standard ICU scoring systems were never designed to use.
+
+---
 
 ## Citations
  
