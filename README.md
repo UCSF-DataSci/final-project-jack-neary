@@ -1,5 +1,5 @@
 # ECG-Based ICU Mortality Prediction
-
+**Authors:** Bob Ho, Jack Neary
 ## Introduction
 ICU mortality is one of the most time-sensitive predictions in medicine. Clinicians currently rely on manual scoring systems like APACHE-II, which require bedside calculation of 12 physiological variables. These scores are labor-intensive, subject to human error, and notably exclude cardiac rhythm data entirely — despite arrhythmias being common and clinically significant in the ICU.
 
